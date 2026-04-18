@@ -1,0 +1,12 @@
+.desktop { display: none; }
+.mobile, .mobileMenu { display: block; }
+
+@media (min-width: 880px) {
+  .desktop { display: flex !important; }
+  .mobile, .mobileMenu { display: none !important; }
+}
+
+/* Hide the brand text on very small viewports (below ~400px) */
+@media (max-width: 399px) {
+  .brandText { display: none !important; }
+}

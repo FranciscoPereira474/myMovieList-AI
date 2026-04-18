@@ -1,0 +1,2 @@
+Reviews have an heart icon and count, but reviews have likes and deslikes.
+Should also include a comments count.

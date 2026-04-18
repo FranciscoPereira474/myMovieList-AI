@@ -1,0 +1,7 @@
+DB doesn't store if the movie was rewatched or not. Remove it from the mockup.
+
+Having spoiler sections in the middle of a review body is complex. Let's have a button to toggle the blur of the whole body instead.
+
+Missing dislike counter and button.
+
+The review page should also include its comments.

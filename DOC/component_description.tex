@@ -1,0 +1,104 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{System Architecture Documentation}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. User}
+\begin{itemize}[leftmargin=*]
+  \item The end-user interacts with the application via web browser or client.
+  \item They send HTTPS requests that are handled by the frontend.
+\end{itemize}
+
+\section*{2. Frontend}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Technology:} React App
+  \item \textbf{Hosting Platform:} Vercel
+  \item \textbf{Role:} Provides the user interface and communicates with the backend via REST HTTP requests.
+  \item \textbf{Flow:}
+    \begin{itemize}
+        \item Receives HTTPS requests from the user.
+        \item Forwards requests as REST HTTP calls to the backend (Flask running on Heroku).
+        \item Receives JSON responses from the backend and displays results to the user.
+    \end{itemize}
+  \item \textbf{Deployment:} Managed by GitLab CI/CD, which automatically deploys the frontend to Vercel.
+\end{itemize}
+
+\section*{3. Backend}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Technology:} Flask (Python framework)
+  \item \textbf{Hosting Platform:} Heroku
+  \item \textbf{Role:} Handles business logic, communication with APIs, database operations, and recommendation generation.
+  \item \textbf{Flow:}
+    \begin{itemize}
+        \item Receives REST HTTP requests from the frontend.
+        \item Authenticates users through Google Auth API or email/password.
+        \item Analyzes user reviews using Google Perspective API.
+        \item Interacts with Supabase DB to store or fetch data.
+        \item Generates personalized recommendations internally using the Recommendation Engine:
+        \begin{itemize}
+            \item Uses data from Supabase DB to refine recommendations.
+            \item Returns recommendation results in JSON format as part of the backend response to the frontend.
+        \end{itemize}
+        \item Sends the complete JSON response back to the frontend.
+    \end{itemize}
+  \item \textbf{Deployment:} Managed by GitLab CI/CD, which automatically deploys the backend to Heroku.
+\end{itemize}
+
+\section*{4. Google Auth API}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Role:} Provides user authentication and authorization.
+  \item \textbf{Flow:}
+    \begin{itemize}
+        \item Backend sends an authentication request.
+        \item Google Auth API returns a token upon successful authentication.
+        \item Backend uses this token to register the user in the database (Supabase DB).
+    \end{itemize}
+\end{itemize}
+
+\section*{5. Google Perspective API}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Role:} Analyzes user-generated reviews for sentiment, toxicity, and other content moderation purposes.
+  \item \textbf{Flow:}
+    \begin{itemize}
+        \item Backend sends reviews to Perspective API for analysis.
+        \item The API returns a validation result.
+        \item This result is stored in the database.
+    \end{itemize}
+\end{itemize}
+
+\section*{6. Supabase DB}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Role:} Acts as the main database for storing application data.
+  \item \textbf{Data Stored:}
+    \begin{itemize}
+        \item User information (registered through Google Auth API or email/password).
+        \item User reviews (submitted by the frontend).
+        \item Review analysis results (validated by Google Perspective API).
+    \end{itemize}
+  \item \textbf{Flow:}
+    \begin{itemize}
+        \item Accepts SQL queries from the backend.
+        \item Provides data fetching and storage operations for reviews and recommendations.
+    \end{itemize}
+\end{itemize}
+
+\section*{7. GitLab CI/CD}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Role:} Automates the continuous integration and deployment pipeline.
+  \item \textbf{Flow:}
+    \begin{itemize}
+        \item Deploys the frontend to Vercel.
+        \item Deploys the backend to Heroku.
+    \end{itemize}
+\end{itemize}
+
+\end{document}

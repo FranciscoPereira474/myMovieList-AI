@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{lscape}
+
+\begin{document}
+
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{2cm}|p{13cm}|}
+\hline
+\textbf{FR ID} & \textbf{Functional Requirement} \\ \hline
+\endfirsthead
+\hline
+\textbf{FR ID} & \textbf{Functional Requirement} \\ \hline
+\endhead
+
+FR1 & The system must support registration, login, and basic user profile management. \\ \hline
+FR2 & The system must be able to manage their profile (view and edit personal information). \\ \hline
+FR3 & The system must allow navigation through a movie catalog with details (title, genre, description, average rating). \\ \hline
+FR4 & The system must include search functionality by title. \\ \hline
+FR5 & The system must allow users to rate items with 0.5--5 stars. \\ \hline
+FR6 & The system must generate recommendations based on rating history or popularity. \\ \hline
+FR7 & The system must provide filtering options through the movie catalog (e.g., by genre, rating, director, year). \\ \hline
+FR8 & The system must provide ordering options through the movie catalog (e.g., by rating, release date, alphabetical, popularity). \\ \hline
+FR9 & The system must store and manage user search history. \\ \hline
+FR10 & The system must provide a backend with API for interaction between frontend and database. \\ \hline
+FR11 & The system must use a database to store users, movies, ratings and recommendations. \\ \hline
+FR12 & The system must be accessible via web. \\ \hline
+FR13 & The system must have a basic configuration for automation of builds, tests, and deployment. \\ \hline
+FR14 & The system must be deployed in a cloud. \\ \hline
+
+\end{longtable}
+
+
+\end{document}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dune: Part Two | CineLog</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        brand: {
+                            400: '#4ade80', 
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'], // Added for Reviews/Plot
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom Fade for Backdrop */
+        .backdrop-fade {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <nav class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-black font-bold text-lg">C</div>
+                        <span class="text-xl font-bold tracking-tight group-hover:text-brand-400 transition-colors">CineLog</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-neutral-400">
+                        <a href="#" class="hover:text-white transition-colors">Films</a>
+                        <a href="#" class="hover:text-white transition-colors">Lists</a>
+                        <a href="#" class="hover:text-white transition-colors">Members</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="text-neutral-400 hover:text-white"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="h-8 w-8 rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://placehold.co/100x100/333/fff?text=ME" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="absolute top-0 left-0 w-full h-[600px] z-0 pointer-events-none">
+        <div class="relative w-full h-full">
+            <img src="https://placehold.co/1920x800/1a1a1a/444?text=Cinematic+Backdrop" alt="Backdrop" class="w-full h-full object-cover opacity-50 backdrop-fade">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-transparent"></div>
+        </div>
+    </div>
+
+    <main class="relative z-10 pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+
+            <aside class="md:col-span-4 lg:col-span-3 space-y-6">
+                
+                <div class="relative sticky top-24">
+                    <div class="rounded-lg overflow-hidden shadow-2xl border border-neutral-800 shadow-brand-500/10 mb-6">
+                        <img src="https://placehold.co/600x900/111/fff?text=Poster" alt="Movie Poster" class="w-full h-auto object-cover">
+                    </div>
+
+                    <div class="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-xl p-4 mb-6">
+                        <div class="flex items-end justify-center gap-2 mb-2">
+                            <i class="fa-solid fa-star text-brand-500 text-2xl mb-1"></i>
+                            <span class="text-4xl font-bold text-white">4.2</span>
+                            <span class="text-sm text-neutral-400 mb-1">/ 5</span>
+                        </div>
+                        <p class="text-center text-xs text-neutral-500 mb-4">Based on 342k ratings</p>
+                        
+                        <div class="space-y-1.5">
+                            <div class="flex items-center gap-2 text-[10px] text-neutral-400">
+                                <span class="w-2">5</span>
+                                <div class="h-1.5 flex-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-brand-500 w-[45%]"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-[10px] text-neutral-400">
+                                <span class="w-2">4</span>
+                                <div class="h-1.5 flex-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-brand-500 w-[35%]"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-[10px] text-neutral-400">
+                                <span class="w-2">3</span>
+                                <div class="h-1.5 flex-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-brand-500 w-[15%]"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-[10px] text-neutral-400">
+                                <span class="w-2">2</span>
+                                <div class="h-1.5 flex-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-brand-500 w-[4%]"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-[10px] text-neutral-400">
+                                <span class="w-2">1</span>
+                                <div class="h-1.5 flex-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-brand-500 w-[1%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <button class="col-span-2 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white py-3 rounded-lg font-semibold transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+                            <i class="fa-solid fa-plus"></i> Add to Watchlist
+                        </button>
+                        
+                        <button class="flex flex-col items-center justify-center bg-neutral-800 hover:bg-neutral-700 text-neutral-200 py-3 rounded-lg text-sm transition-colors border border-neutral-700 group">
+                            <i class="fa-regular fa-star text-lg mb-1 group-hover:text-brand-400"></i>
+                            Rate
+                        </button>
+
+                        <button class="flex flex-col items-center justify-center bg-neutral-800 hover:bg-neutral-700 text-neutral-200 py-3 rounded-lg text-sm transition-colors border border-neutral-700 group">
+                            <i class="fa-solid fa-list-ul text-lg mb-1 group-hover:text-brand-400"></i>
+                            Add to List
+                        </button>
+
+                        <button class="col-span-2 flex items-center justify-center gap-2 text-neutral-400 hover:text-white py-2 text-sm transition-colors">
+                            <i class="fa-solid fa-share-nodes"></i> Share this film
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="md:col-span-8 lg:col-span-9 space-y-10">
+                
+                <div class="space-y-4 pt-4 md:pt-12">
+                    <h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter drop-shadow-lg">
+                        Dune: Part Two
+                        <span class="text-2xl md:text-3xl font-normal text-neutral-400 ml-2">2024</span>
+                    </h1>
+                    
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-neutral-300">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-neutral-800 border border-neutral-700 px-2 py-0.5 rounded text-xs uppercase font-bold text-neutral-400">PG-13</span>
+                            <span>2h 46m</span>
+                        </div>
+                        <div>
+                            Directed by <a href="#" class="font-bold text-white hover:text-brand-400 underline decoration-neutral-700 hover:decoration-brand-400 underline-offset-4">Denis Villeneuve</a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="px-3 py-1 rounded-full border border-neutral-700 bg-neutral-900/50 hover:bg-neutral-800 text-xs text-neutral-300 transition-colors">Science Fiction</a>
+                        <a href="#" class="px-3 py-1 rounded-full border border-neutral-700 bg-neutral-900/50 hover:bg-neutral-800 text-xs text-neutral-300 transition-colors">Adventure</a>
+                    </div>
+                </div>
+
+                <section>
+                    <h3 class="text-lg font-bold text-white mb-2 border-l-4 border-brand-500 pl-3">Overview</h3>
+                    <p class="text-neutral-300 leading-relaxed text-lg font-serif">
+                        Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-neutral-800 flex gap-8 text-sm">
+                        <div>
+                            <span class="block text-neutral-500 text-xs uppercase font-bold mb-1">Cinematography</span>
+                            <a href="#" class="text-neutral-200 hover:text-brand-400">Greig Fraser</a>
+                        </div>
+                        <div>
+                            <span class="block text-neutral-500 text-xs uppercase font-bold mb-1">Music</span>
+                            <a href="#" class="text-neutral-200 hover:text-brand-400">Hans Zimmer</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-white">Top Cast</h3>
+                        <a href="#" class="text-xs text-brand-400 hover:text-white uppercase font-bold tracking-wide">Full Cast</a>
+                    </div>
+                    
+                    <div class="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory no-scrollbar">
+                        <div class="snap-start shrink-0 w-32 group cursor-pointer">
+                            <div class="w-32 h-32 rounded-lg overflow-hidden mb-2 border border-neutral-800 group-hover:border-brand-500/50 transition-colors">
+                                <img src="https://placehold.co/150x150/222/fff?text=TC" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Actor">
+                            </div>
+                            <h4 class="text-sm font-bold text-neutral-200 truncate">Timothée Chalamet</h4>
+                            <p class="text-xs text-neutral-500 truncate">Paul Atreides</p>
+                        </div>
+                        <div class="snap-start shrink-0 w-32 group cursor-pointer">
+                            <div class="w-32 h-32 rounded-lg overflow-hidden mb-2 border border-neutral-800 group-hover:border-brand-500/50 transition-colors">
+                                <img src="https://placehold.co/150x150/333/fff?text=Z" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Actor">
+                            </div>
+                            <h4 class="text-sm font-bold text-neutral-200 truncate">Zendaya</h4>
+                            <p class="text-xs text-neutral-500 truncate">Chani</p>
+                        </div>
+                        <div class="snap-start shrink-0 w-32 group cursor-pointer">
+                            <div class="w-32 h-32 rounded-lg overflow-hidden mb-2 border border-neutral-800 group-hover:border-brand-500/50 transition-colors">
+                                <img src="https://placehold.co/150x150/444/fff?text=RF" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Actor">
+                            </div>
+                            <h4 class="text-sm font-bold text-neutral-200 truncate">Rebecca Ferguson</h4>
+                            <p class="text-xs text-neutral-500 truncate">Lady Jessica</p>
+                        </div>
+                        <div class="snap-start shrink-0 w-32 group cursor-pointer">
+                            <div class="w-32 h-32 rounded-lg overflow-hidden mb-2 border border-neutral-800 group-hover:border-brand-500/50 transition-colors">
+                                <img src="https://placehold.co/150x150/555/fff?text=JB" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Actor">
+                            </div>
+                            <h4 class="text-sm font-bold text-neutral-200 truncate">Javier Bardem</h4>
+                            <p class="text-xs text-neutral-500 truncate">Stilgar</p>
+                        </div>
+                        <div class="snap-start shrink-0 w-32 group cursor-pointer">
+                            <div class="w-32 h-32 rounded-lg overflow-hidden mb-2 border border-neutral-800 group-hover:border-brand-500/50 transition-colors">
+                                <img src="https://placehold.co/150x150/666/fff?text=AB" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Actor">
+                            </div>
+                            <h4 class="text-sm font-bold text-neutral-200 truncate">Austin Butler</h4>
+                            <p class="text-xs text-neutral-500 truncate">Feyd-Rautha</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-neutral-800">
+
+                <section>
+                    <div class="flex items-center gap-6 mb-6 border-b border-neutral-800">
+                        <button class="pb-3 text-sm font-bold text-brand-400 border-b-2 border-brand-400">Popular Reviews</button>
+                        <button class="pb-3 text-sm font-medium text-neutral-400 hover:text-white transition-colors">Recent Reviews</button>
+                        <button class="pb-3 text-sm font-medium text-neutral-400 hover:text-white transition-colors">Friends</button>
+                    </div>
+
+                    <div class="bg-neutral-900 rounded-lg p-4 mb-8 border border-neutral-800 flex gap-4">
+                        <div class="shrink-0">
+                            <img src="https://placehold.co/50x50/333/fff?text=ME" class="w-10 h-10 rounded-full" alt="User">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm text-neutral-400 mb-2">Review <strong>Dune: Part Two</strong>...</p>
+                            <div class="flex items-center justify-between bg-neutral-950 border border-neutral-800 rounded px-3 py-2 cursor-pointer hover:border-neutral-700 transition-colors">
+                                <span class="text-neutral-500 text-sm">Write your thoughts here...</span>
+                                <div class="text-neutral-600 hover:text-brand-400"><i class="fa-regular fa-star"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        
+                        <article class="flex gap-4">
+                            <div class="shrink-0">
+                                <img src="https://placehold.co/50x50/111/fff?text=A" class="w-10 h-10 rounded-full border border-neutral-800" alt="User">
+                            </div>
+                            <div class="flex-1 pb-6 border-b border-neutral-800">
+                                <div class="flex items-baseline justify-between mb-1">
+                                    <div class="flex items-center gap-2">
+                                        <h4 class="font-bold text-neutral-200 text-sm">ArrakisFan99</h4>
+                                        <div class="flex text-brand-400 text-xs gap-0.5">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-neutral-500">2d ago</span>
+                                </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed mb-3">
+                                    I don't say this lightly: this is the generation's Empire Strikes Back. The scale is incomprehensible. Austin Butler is terrifying.
+                                </p>
+                                <div class="flex items-center gap-4 text-xs text-neutral-500">
+                                    <button class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-thumbs-up mr-1"></i> 2.4k</button>
+                                    <button class="hover:text-white transition-colors"><i class="fa-solid fa-comment mr-1"></i> 124</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="flex gap-4">
+                            <div class="shrink-0">
+                                <img src="https://placehold.co/50x50/222/fff?text=B" class="w-10 h-10 rounded-full border border-neutral-800" alt="User">
+                            </div>
+                            <div class="flex-1 pb-6 border-b border-neutral-800">
+                                <div class="flex items-baseline justify-between mb-1">
+                                    <div class="flex items-center gap-2">
+                                        <h4 class="font-bold text-neutral-200 text-sm">CinephileX</h4>
+                                        <div class="flex text-brand-400 text-xs gap-0.5">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-neutral-500">5d ago</span>
+                                </div>
+                                <div class="bg-neutral-900 border border-neutral-800 p-2 rounded text-xs text-neutral-400 mb-2 flex items-center gap-2 w-fit">
+                                    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i> Contains Spoilers
+                                </div>
+                                <p class="text-neutral-500 text-sm italic mb-3 cursor-pointer hover:text-neutral-300">
+                                    [Click to reveal spoiler review]
+                                </p>
+                                <div class="flex items-center gap-4 text-xs text-neutral-500">
+                                    <button class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-thumbs-up mr-1"></i> 856</button>
+                                    <button class="hover:text-white transition-colors"><i class="fa-solid fa-comment mr-1"></i> 42</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <button class="w-full py-3 bg-neutral-900 hover:bg-neutral-800 text-neutral-400 text-sm font-medium rounded-lg transition-colors border border-neutral-800">
+                            Read All 12,402 Reviews
+                        </button>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-8 text-center">
+        <p class="text-xs text-neutral-600">&copy; 2024 CineLog Inc.</p>
+    </footer>
+
+</body>
+</html>

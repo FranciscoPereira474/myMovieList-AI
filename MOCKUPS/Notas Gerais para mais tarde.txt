@@ -1,0 +1,1 @@
+Na página do utilizador vai ser preciso implementar funcionalidade para mudar o avatar e editar a bio.

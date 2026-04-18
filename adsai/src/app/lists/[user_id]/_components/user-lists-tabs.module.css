@@ -1,0 +1,48 @@
+.root {
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.tabsList {
+  width: auto !important;
+  display: flex !important;
+  gap: 0.5rem;
+  flex-wrap: nowrap !important;
+}
+
+.createWrapper {
+  width: auto !important;
+  margin-bottom: 0 !important;
+  margin-left: 1rem !important;
+}
+
+@media (max-width: 480px) {
+  .root {
+    flex-direction: column-reverse !important;
+    align-items: stretch !important;
+  }
+
+  .tabsList {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+
+  :global(.tabsList) {
+    /* fallback global selector if needed */
+  }
+
+  .createWrapper {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-bottom: 1rem !important;
+    margin-left: 0 !important;
+  }
+
+  /* Make the create button occupy full width of its container */
+  .createWrapper a {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}

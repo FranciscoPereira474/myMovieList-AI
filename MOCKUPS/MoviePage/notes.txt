@@ -1,0 +1,14 @@
+The mockup has PG data. The DB is not prepared for that. We can just remove that or update the DB.
+
+The mockup has Cinematography and Music data. DB is not prepared for that. Update the DB or remove them from the mockup.
+
+The left column is sticky and some elements are only accessible if scrolling all the way down.
+Don't use sticky left column.
+
+The add to watchlist button is a wide button, while the rating button is a small button.
+It should be the other way around:
+Wide section for rating, where the user hovers 5 stars and can click to make a 1-10 rating (empty, half and full stars); and a small button to add to the watchlist.
+
+Maybe there is no need for Full Cast button, that would require another page. The top cast should be scrollable.
+
+Missing form for writing a review.

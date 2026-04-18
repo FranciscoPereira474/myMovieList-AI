@@ -1,0 +1,15 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["adsai/src/app", "adsai/src/lib", "adsai/src/components"],
+  "entryPointStrategy": "expand",
+  "out": "public",
+  "name": "ADS-AI Docs",
+  "plugin": ["typedoc-plugin-markdown"],
+  "hideBreadcrumbs": true,
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/node_modules/**",
+    "**/.next/**"
+  ]
+}

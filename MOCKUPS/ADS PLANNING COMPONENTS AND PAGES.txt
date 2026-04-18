@@ -1,0 +1,202 @@
+Componentes:
+- MovieListPreview
+Recebe label, url de navegação, array de movie IDs e flag para mostrar MovieStats, UserRating ou nada.
+
+A label é um link de navegação para a página /movies com a lista completa de films com os respetivos filtros e ordenação aplicados ao array de filmes
+Mostra MovieCards
+A ideia é ter um infinite scroll: Ao dar load espera X segundos e começa a dar scroll lentamente automaticamente. Se um user dá hover, o scroll automático para e o user pode arrastar para percorrer a lista
+
+- MovieCard
+Recebe movie ID, opcionalmente um username, e uma flag para mostrar MovieStats, UserRating ou nada.
+
+Mostra imagem do filme e MovieStats/UserRatings/nada
+Ao clicar na imagem do filme vai para a página dele /movie/[id]
+
+- MovieStats
+Recebe movie ID
+
+Mostra o avg rating e o rating count do filme.
+
+- UserRating
+Recebe movie ID e opcionalmente username
+
+Se receber um username, vai usá-lo para obter os dados do UserRating. Caso contrário, usa o user da sessão.
+Mostra o Rating que o user deu ao filme
+
+- ReviewListPreview
+(Semelhante ao MovieListPreview mas para Reviews)
+
+Mostra ReviewCards, também com scroll infinito
+Recebe label, url de navegação e array de review IDs
+
+A label é um link para a página completa de reviews /reviews com os filtros e ordenação respetivos aplicados ao array de reviews
+
+- ReviewCard
+Recebe review ID, flag para mostrar o poster do filme ou não.
+
+Se clicar no username, vai-se para a página do user /user/[username]
+Se clicar no botão do Contador de replies, vai para a página da review /review/[id]
+Se clicar na imagem do filme vai para a página dele /movie/[id]
+
+Mostra estrelas se o autor tiver dado rate ao filme
+Se o user da sessão for o autor, mostrar botão para apagar
+Dá para dar like e deslike se logged in, e removê-los também.
+
+- ListListPreview
+(Semelhante ao MovieListPreview)
+Recebe label, url de navegação e array de list IDs
+
+Mostra ListCards, também com scroll infinito
+A label é um link para a página completa de listas /lists com os filtros e ordenação respetivos aplicados ao array de listas
+
+- ListCard
+Recebe label e ID da lista
+
+Mostra X filmes da lista, os primeiros adicionados por exemplo.
+
+A label é um link para a página da lista /lists/[id]
+Se clicar na imagem de um dos filmes vai para a página do filme /movie/[id]
+Dá para dar save da lista se o user estiver logado
+Clicar no botão do contador de comments ou no nome da lista vai para a página da lista /list/[id]
+Se o user da sessao for o autor, mostrar botão para apagar lista
+
+- UserAvatar
+Recebe username
+Círculo simples, com gradiente de fundo e a primeira letra do username
+
+- MovieGrid
+Componente que recebe label e uma lista de filmes, tem sorting, ordenação e paginação
+Mostra uma grid de MovieCards
+Páginas que usam este componente:
+	/ratings e /ratings/[username]
+	/watchlist e /watchlist[username]
+	/recommendations
+	/movies
+(Cada página prepara o array de movie IDs e o tipo de MovieCards)
+Também tem um botão de partilhar (componente reutilizável)
+
+- ShareButton
+Copia o url atual para o clipboard
+
+- Pagination
+Recebe número de elementos, índice de página atual e handler do componente pai
+Contém botões de previous e next
+Mostra a página atual e o número total de páginas
+
+- MovieActions
+Recebe o ID de um filme
+
+Se o utilizador estiver logado, permite dar rate ao filme ou adicionar à watchlist (vai estar na página de um filme específico)
+Mostra aquilo que o user já fez (o rating que tenha dado e o estado de pertencer ou não à watchlist)
+
+- RatingsDistribution
+Recebe um movie ID
+Mostra um gráfico de barras com a distribuição das avaliações dos users a um certo filme (parecido com o do letterbox)
+
+- AddToList
+Recebe movie ID
+Permite a um user logado que adicione o filme a uma das suas listas (multiselect dropdown)
+
+- GenreButton
+Na secção dos géneros da página de um filme vão estar estes botões.
+Recebem o ID de género.
+Ao clicar vamos para a página de filmes com o filtro do respetivo género.
+
+- MovieCast
+Recebe array de IDs de atores
+Mostra cartas de atores, com scrolling
+Cada carta tem a foto do ator, nome verdadeiro e nome da personagem
+
+- ReviewList
+Recebe array de review IDs e url de navegação para página completa
+
+Lista X ReviewCards de um filme (vai estar na página de um filme)
+Dá para expander resultados e botão para colapsar
+
+Ao clicar na label vamos para a página com a lista completa com o sorting/filtros respetivos, ex: movies/[id]/reviews
+
+- ReviewForm
+Recebe ID de um filme.
+Form para submeter uma review, com título e corpo. User precisa de estar logado
+
+- ReviewsPage
+Semelhante ao MovieGrid, mas sem grid e para listar ReviewCards, com filtros, sort e paginação
+Recebe lista de IDs de reviews
+
+- ExpandList
+Recebe lista de Cards (podem ser reviews, comments, etc.)
+Mostra X cartas e tem opções para mostrar mais e mostrar menos.
+Em cima, tem opções de sorting (como likes ou data de postagem).
+
+- ReplyCard
+Parecido com ReviewCard, mas para Replies. Recebe apenas o ID da reply.
+Tem botão para apagar se o user for o autor e botões para like e deslike se logado.
+Pode partilhar o estilo com o CommentCard.
+
+- ReplyForm
+Recebe ID de uma review.
+Form para submeter uma reply a uma review. User precisa de estar logado.
+
+- ListsPage
+Semelhante ao ReviewsPage mas para listar ListCards com sort/filtros e paginação
+
+- CommentCard
+Praticamente igual ao ReplyCard mas para comentários a listas customizadas de filmes.
+Recebe comment ID.
+Se o user da sessão for o autor, mostra botão para apagar.
+Dá para dar like e deslike se logado.
+(Pode partilhar o estilo com o ReplyCard)
+
+- ProfileGrid
+Grid de perfis, como UserAvatars e usernames.
+Componente a ser usado por páginas como: /user/[username]/followers e /user/[username]/following
+Recebe array de IDs de users e/ou usernames
+
+
+
+Páginas:
+- HomePage
+Tem MovieListPreview para Recomendações (vêm de um algoritmo de recomendação),
+MovieListPreview para filmes trending da semana,
+ReviewListPreview para reviews trending da semana,
+MovieListPreview para Filmes mais bem rated de todos os tempos,
+ListListPreview para Listas populares (mais saved)
+
+- User page /user (para o user da sessão atual) e /user/[username] (para um específico)
+Tem botão para dar follow e para partilhar (ShareButton),
+MovieListPreview para Recomendações,
+MovieListPreview para filmes vistos recentemente,
+MovieListPreview para a watchlist,
+MovieListPreview para os seus ratings,
+ListListPreview para mostrar listas populares criadas pelo utilizador,
+ListListPreview para mostrar listas que ele tenha guardado
+
+- Movie Page /movie/[id]
+Tem backdrop com fadeout nos lados e em baixo,
+Coluna da esquerda com poster do filme, MovieStats, RatingsDistribution, MovieActions e AddToList
+Coluna principal com nome do filme, ano e director (ano e director são links para pagina de filmes com filtro adequado),
+Lista de géneros (GenreButtons),
+MovieCast,
+ReviewList para reviews populares,
+ReviewList para reviews recentes,
+ReviewForm
+
+- Followers user/[username]/followers e Following user/[username]/following
+Têm ProfileGrid
+
+- Reviews Page /movie/[id]/reviews e /reviews
+Têm componente ReviewsPage
+
+- Review Page /review/[id]
+Coluna da esquerda com poster do filme e nome dele,
+Coluna principal com ReviewCard e, em baixo, ExpandList com replies,
+ReplyForm
+
+- Lists Pages /lists e /lists/[username]
+Têm componente ListsPage,
+Form para criar listas (na do [username], se o user da sessão for o da página)
+
+- List Page /list/[id]
+Tem componente MovieGrid
+Contador de saves e botão para dar save se logado
+Em baixo, Contador de comentários na label "Comentários" e ExpandList com Comments

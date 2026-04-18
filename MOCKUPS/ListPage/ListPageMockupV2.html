@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80s Horror Essentials | CineLog</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        brand: {
+                            400: '#4ade80', 
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-500 selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-black font-bold text-lg">C</div>
+                        <span class="text-xl font-bold tracking-tight group-hover:text-brand-400 transition-colors">CineLog</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-neutral-400">
+                        <a href="#" class="hover:text-white transition-colors">Films</a>
+                        <a href="#" class="text-white font-semibold transition-colors">Lists</a>
+                        <a href="#" class="hover:text-white transition-colors">Members</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="text-neutral-400 hover:text-white"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="h-8 w-8 rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://placehold.co/100x100/333/fff?text=ME" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+        <header class="relative w-full pt-32 pb-16 overflow-hidden border-b border-neutral-800">
+            
+            <div class="absolute inset-0 z-0">
+                <img src="https://placehold.co/1920x1080/4a0404/000?text=+" class="w-full h-full object-cover blur-3xl opacity-40 scale-110" alt="Mood Background">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+                
+                <div class="inline-flex items-center gap-2 mb-4 bg-black/30 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-xs font-medium text-neutral-300">
+                    <span class="text-brand-400"><i class="fa-solid fa-list-ol"></i></span> Ranked List
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-2xl">
+                    Neon Nightmares: <br/> Best Horror of the 80s
+                </h1>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8 text-sm">
+                    <div class="flex items-center gap-2">
+                        <img src="https://placehold.co/50x50/333/fff?text=DK" class="w-8 h-8 rounded-full border border-neutral-600" alt="Author">
+                        <span class="text-neutral-300">Curated by <strong class="text-white hover:underline cursor-pointer">DarkKnight84</strong></span>
+                    </div>
+                    <div class="flex items-center gap-4 text-neutral-400">
+                        <span><i class="fa-solid fa-film mr-1.5"></i> 24 Films</span>
+                        <span><i class="fa-solid fa-bookmark mr-1.5 text-brand-400"></i> 1,204 Saves</span>
+                        <span><i class="fa-solid fa-clock mr-1.5"></i> 42h 15m</span>
+                    </div>
+                </div>
+
+                <div class="max-w-2xl mx-auto mb-8">
+                    <p class="text-neutral-300 text-base md:text-lg leading-relaxed font-serif">
+                        A definitive ranking of the synth-heavy, practical-effect-laden horror that defined a decade. From the streets of Springwood to the outpost in Antarctica.
+                    </p>
+                </div>
+
+                <div class="flex items-center justify-center gap-4">
+                    <button class="flex items-center gap-2 px-6 py-2.5 rounded-full border border-neutral-500 hover:border-white hover:bg-white hover:text-black transition-all font-semibold text-sm group">
+                        <i class="fa-regular fa-bookmark group-hover:text-black"></i> Save this List
+                    </button>
+                    <button class="flex items-center gap-2 px-6 py-2.5 rounded-full border border-neutral-700 bg-neutral-900/50 hover:bg-neutral-800 transition-colors text-neutral-300 text-sm">
+                        <i class="fa-solid fa-share-nodes"></i> Share
+                    </button>
+                </div>
+
+            </div>
+        </header>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-10">
+
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-lg group-hover:shadow-brand-500/20 transition-all duration-300 group-hover:scale-[1.02] border border-neutral-800">
+                        <img src="https://placehold.co/400x600/111/fff?text=The+Thing" class="w-full h-full object-cover" alt="Poster">
+                        <div class="absolute top-0 left-0 bg-white/90 backdrop-blur text-black font-black text-xl px-3 py-1 rounded-br-lg shadow-lg z-10">
+                            #01
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-circle-info text-3xl text-white drop-shadow-md"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-start justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-neutral-200 group-hover:text-white truncate">The Thing</h3>
+                            <span class="text-xs text-neutral-500">1982</span>
+                        </div>
+                        <div class="flex text-brand-400 text-[10px] gap-0.5 pt-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-neutral-400 mt-1 line-clamp-2 border-l-2 border-neutral-700 pl-2 italic">
+                        "The practical effects still haven't been topped. Carpenter's masterpiece."
+                    </p>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 border border-neutral-800 transition-all duration-300 group-hover:scale-[1.02]">
+                        <img src="https://placehold.co/400x600/222/fff?text=The+Shining" class="w-full h-full object-cover" alt="Poster">
+                        <div class="absolute top-0 left-0 bg-neutral-800/90 backdrop-blur text-white font-black text-lg px-3 py-1 rounded-br-lg shadow-lg z-10">
+                            #02
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-start justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-neutral-200 group-hover:text-white truncate">The Shining</h3>
+                            <span class="text-xs text-neutral-500">1980</span>
+                        </div>
+                         <div class="flex text-brand-400 text-[10px] gap-0.5 pt-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 border border-neutral-800 transition-all duration-300 group-hover:scale-[1.02]">
+                        <img src="https://placehold.co/400x600/333/fff?text=Nightmare" class="w-full h-full object-cover" alt="Poster">
+                        <div class="absolute top-0 left-0 bg-neutral-800/90 backdrop-blur text-white font-black text-lg px-3 py-1 rounded-br-lg shadow-lg z-10">
+                            #03
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-start justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-neutral-200 group-hover:text-white truncate">A Nightmare on Elm Street</h3>
+                            <span class="text-xs text-neutral-500">1984</span>
+                        </div>
+                         <div class="flex text-brand-400 text-[10px] gap-0.5 pt-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 border border-neutral-800 transition-all duration-300 group-hover:scale-[1.02]">
+                        <img src="https://placehold.co/400x600/444/fff?text=The+Fly" class="w-full h-full object-cover" alt="Poster">
+                        <div class="absolute top-0 left-0 bg-neutral-800/90 backdrop-blur text-white font-black text-lg px-3 py-1 rounded-br-lg shadow-lg z-10">
+                            #04
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-start justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-neutral-200 group-hover:text-white truncate">The Fly</h3>
+                            <span class="text-xs text-neutral-500">1986</span>
+                        </div>
+                        <div class="flex text-brand-400 text-[10px] gap-0.5 pt-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="group cursor-pointer">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 border border-neutral-800 transition-all duration-300 group-hover:scale-[1.02]">
+                        <img src="https://placehold.co/400x600/555/fff?text=Evil+Dead+2" class="w-full h-full object-cover" alt="Poster">
+                        <div class="absolute top-0 left-0 bg-neutral-800/90 backdrop-blur text-white font-black text-lg px-3 py-1 rounded-br-lg shadow-lg z-10">
+                            #05
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-start justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-neutral-200 group-hover:text-white truncate">Evil Dead II</h3>
+                            <span class="text-xs text-neutral-500">1987</span>
+                        </div>
+                        <div class="flex text-brand-400 text-[10px] gap-0.5 pt-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-5 py-8 text-center border-t border-b border-neutral-800/50">
+                    <span class="text-neutral-600 text-sm italic">... and 19 more items</span>
+                 </div>
+
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-4 pb-24">
+            <h3 class="text-xl font-bold text-white mb-6">Comments <span class="text-neutral-500 text-base font-normal ml-2">(14)</span></h3>
+
+            <div class="flex gap-4 mb-10">
+                <img src="https://placehold.co/50x50/333/fff?text=ME" class="w-10 h-10 rounded-full border border-neutral-700" alt="Me">
+                <div class="flex-1">
+                    <div class="relative">
+                        <textarea rows="3" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-3 text-sm text-neutral-200 focus:ring-1 focus:ring-brand-500 focus:border-brand-500 outline-none resize-none placeholder-neutral-600" placeholder="Share your thoughts on this list..."></textarea>
+                        <button class="absolute bottom-3 right-3 bg-white text-black text-xs font-bold px-3 py-1.5 rounded hover:bg-neutral-200 transition-colors">Post</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                
+                <div class="flex gap-4">
+                    <div class="shrink-0">
+                         <img src="https://placehold.co/50x50/111/fff?text=A" class="w-10 h-10 rounded-full border border-neutral-800" alt="User">
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-neutral-200 text-sm">HorrorHound</span>
+                            <span class="text-xs text-neutral-500">2h ago</span>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-2">
+                            Solid list! I personally would have put The Fly at #2, but The Thing definitely deserves the top spot. Where is Poltergeist though?
+                        </p>
+                        <div class="flex items-center gap-4 text-xs text-neutral-500">
+                             <button class="hover:text-white transition-colors"><i class="fa-regular fa-heart"></i> 12</button>
+                             </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="shrink-0">
+                         <img src="https://placehold.co/50x50/222/fff?text=B" class="w-10 h-10 rounded-full border border-neutral-800" alt="User">
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-neutral-200 text-sm">RetroWave</span>
+                            <span class="text-xs text-neutral-500">5h ago</span>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-2">
+                            Finally someone showing love to Evil Dead II over the original. It's the perfect horror comedy mix.
+                        </p>
+                        <div class="flex items-center gap-4 text-xs text-neutral-500">
+                             <button class="hover:text-white transition-colors"><i class="fa-regular fa-heart"></i> 8</button>
+                             </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-8 text-center">
+        <p class="text-xs text-neutral-600">&copy; 2024 CineLog Inc.</p>
+    </footer>
+
+</body>
+</html>

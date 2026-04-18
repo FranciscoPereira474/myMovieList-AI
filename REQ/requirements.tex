@@ -1,0 +1,140 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Requirements for IMDb-like Movie Recommendation Project}
+\author{AI Generated Requirements}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Project goals \& constraints}
+\begin{itemize}
+  \item Primary goal: a single-repo, monolithic full-stack web app (Next.js) that offers movie discovery, per-movie pages, user accounts, reviews, ratings, and simple recommendations.
+  \item Budget constraint: free tiers only (Vercel + Supabase + TMDB). Supabase free DB storage $\sim$500MB \textrightarrow{} avoid storing large media blobs.
+  \item Deploy model: CI/CD automatic on GitHub \textrightarrow{} Vercel production.
+\end{itemize}
+
+\section{Actors (users \& roles)}
+\begin{itemize}
+  \item Anonymous visitor (browse, search, see SSR pages)
+  \item Registered user (all visitor actions + post review, rate, like, watchlist)
+  \item Admin (manage seeded movie data, moderate reviews — optional for MVP)
+\end{itemize}
+
+\section{High-level user stories (prioritized)}
+\begin{enumerate}
+  \item Visitor can see a homepage with recommendations, popular lists and a search box.
+  \item Visitor can view an SSR movie page with metadata, cast (if available), ratings and reviews.
+  \item User can sign up / log in (Supabase Auth).
+  \item User can post/edit/delete their reviews and rate movies.
+  \item User can add/remove movies to a watchlist and mark as watched.
+  \item User can like other users’ reviews.
+  \item User gets personalized recommendations (exclude movies already watched).
+  \item Admin can re-seed or refresh TMDB metadata (script).
+\end{enumerate}
+
+\section{Functional requirements}
+\subsection{Pages \& navigation}
+\begin{itemize}
+  \item \texttt{/} — Home (SSR): top N recommendations, trending, genres, quick search.
+  \item \texttt{/movies/[id]} — Movie page (SSR): title, release date, runtime, genres, poster, overview, average rating, reviews list, action UI (rate, add to watchlist).
+  \item \texttt{/users/[id]} — User profile (SSR): public reviews, stats (reviews count, avg rating).
+  \item \texttt{/reviews/[id]} — Review page (SSR optional).
+  \item Server routes (Next.js API routes) for mutations (\texttt{POST /api/reviews}, \texttt{POST /api/ratings}, \texttt{PATCH /api/watchlist}, etc.).
+\end{itemize}
+
+\subsection{Authentication \& profile}
+Use Supabase Auth (email/password) for login/signup and session management (JWT). Profile table stored in DB to hold display name, avatar URL and preferences.
+
+\subsection{Movies metadata \& TMDB integration}
+\begin{itemize}
+  \item Seed script pulls a curated set of movies (e.g., top 500) from TMDB and stores minimal metadata.
+  \item For missing pages, fetch from TMDB on demand and persist.
+  \item Do \textbf{not} store poster images in Supabase; use TMDB image URLs.
+\end{itemize}
+
+\subsection{Reviews / Ratings / Likes / Watchlist}
+\begin{itemize}
+  \item Reviews: create/edit/delete by author only, rating 1--10.
+  \item Ratings: separate entity, unique per user/movie.
+  \item Likes: unique per user/review.
+  \item Watchlist: status enum \{want\_to\_watch, watching, watched\}.
+\end{itemize}
+
+\subsection{Search \& filters}
+\begin{itemize}
+  \item Search by title and overview.
+  \item Filters: genre, year, runtime range, sort by popularity, release date, average rating, or most reviewed.
+  \item Pagination with page/limit or cursor.
+\end{itemize}
+
+\subsection{Recommendations (MVP)}
+Simple hybrid: combine popularity (TMDB) + content-based similarity (genres/keywords) + exclude watched movies.
+
+\section{Non-functional requirements}
+\begin{itemize}
+  \item SSR for SEO.
+  \item WCAG AA accessibility.
+  \item Edge caching; throttle API routes; avoid image storage.
+  \item DB indexing for scalability.
+  \item Security: RLS, input validation, CSRF protection.
+  \item Privacy: user can delete account and personal data.
+\end{itemize}
+
+\section{Data model}
+Provide a Prisma schema defining \texttt{User}, \texttt{Movie}, \texttt{Genre}, \texttt{Review}, \texttt{Rating}, \texttt{Watchlist}, and \texttt{Like} tables with appropriate relations and unique constraints.
+
+\section{API surface}
+All write endpoints require Supabase JWT authentication.  
+Examples:
+\begin{itemize}
+  \item \texttt{GET /api/movies?query=\&genres=\&page=\&sort=} — list movies.
+  \item \texttt{GET /api/movies/:tmdbId} — details + ratings + reviews.
+  \item \texttt{POST /api/reviews} — create review.
+  \item \texttt{PATCH /api/reviews/:id}, \texttt{DELETE /api/reviews/:id}.
+  \item \texttt{POST /api/ratings} — upsert rating.
+  \item \texttt{POST /api/watchlist} — manage watchlist.
+  \item \texttt{GET /api/recommendations?userId=\&size=10} — personalized recommendations.
+\end{itemize}
+
+\section{Security \& privacy}
+Row Level Security enforced, input sanitization, JWT verification, and rate limiting (e.g., 60 req/min per IP for mutations).
+
+\section{Testing \& CI/CD}
+Unit, component, and end-to-end tests (Jest, React Testing Library, Playwright).  
+GitHub Actions pipeline: lint, type-check, tests, deploy to Vercel.
+
+\section{Monitoring \& logging}
+Use Sentry, Supabase logs, and a simple analytics table for DAU/MAU metrics.
+
+\section{Acceptance criteria}
+\begin{itemize}
+  \item User signup creates profile.
+  \item Movie page returns correct metadata and average rating.
+  \item Authenticated user can create/edit/delete their own review.
+  \item Recommendations exclude watched movies.
+  \item Seed script populates DB with at least 100 movies.
+\end{itemize}
+
+\section{Roadmap}
+\textbf{MVP}: Auth, seeded TMDB data, movie SSR page, reviews/ratings CRUD, watchlist, simple recommendations, CI + tests + deploy.  
+\textbf{Next}: Likes, user profiles, pagination improvements, full-text search, analytics, stronger privacy controls.  
+\textbf{Later}: Collaborative filtering, social features, admin moderation UI, image uploads.
+
+\section{Risks \& mitigations}
+\begin{itemize}
+  \item Supabase 500MB limit: store metadata only, purge old logs.
+  \item TMDB rate limits: cache aggressively, seed curated set.
+  \item Vercel free limits: monitor bandwidth, use ISR for high-traffic pages.
+\end{itemize}
+
+\section{Deliverables}
+README with architecture diagram, schema.prisma and migrations, seed script, API documentation, test reports, and Vercel deployment link.
+
+\end{document}

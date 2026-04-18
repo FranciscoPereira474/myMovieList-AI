@@ -1,0 +1,1 @@
+The mockup shows a name and a username for each user. We only have usernames in our DB.

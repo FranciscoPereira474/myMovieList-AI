@@ -1,0 +1,58 @@
+# Node.js dependencies
+node_modules/
+
+# Packages and lockfiles (lockfiles are usually committed, but ignore temporary ones)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+
+# Next.js build output
+/.next/
+/out/
+
+# Production
+/build/
+/dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor and OS files
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage and testing
+/coverage/
+
+# Vercel / deployment
+.vercel/
+
+# Monorepos / package managers
+/.yarn/
+.pnpm-debug.log*
+
+# Ignore node_modules and build artifacts inside subpackages (e.g., `adsai`)
+/adsai/node_modules/
+/adsai/.next/
+
+# Misc common
+*.pem
+*.log
+# Ignore common file types when compiling .lex documentation
+*.pdf
+*.log
+*.out
+*.aux
+.DS_Store
+.vercel
+
+
+.DS_Store

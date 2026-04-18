@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followers of @sarahj | CineLog</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        brand: {
+                            400: '#4ade80', 
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-500 selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-black font-bold text-lg">C</div>
+                        <span class="text-xl font-bold tracking-tight group-hover:text-brand-400 transition-colors">CineLog</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-neutral-400">
+                        <a href="/movies" class="hover:text-white transition-colors">Films</a>
+                        <a href="/lists.html" class="hover:text-white transition-colors">Lists</a>
+                        <a href="#" class="text-white font-semibold transition-colors">Members</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                     <div class="h-8 w-8 rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://placehold.co/100x100/333/fff?text=ME" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-10 border-b border-neutral-800 pb-6 flex items-center justify-between">
+            <div>
+                <div class="flex items-center gap-2 text-sm text-neutral-500 mb-1">
+                    <a href="#" class="hover:text-brand-400 transition-colors">@sarahj</a>
+                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    <span>Network</span>
+                </div>
+                <h1 class="text-3xl font-bold text-white tracking-tight">
+                    Followers <span class="text-neutral-500 text-lg font-normal ml-2">1,240</span>
+                </h1>
+            </div>
+            
+            <div class="hidden sm:flex bg-neutral-900 rounded-lg p-1 border border-neutral-800">
+                <button class="px-4 py-1.5 rounded-md bg-neutral-800 text-white shadow text-sm font-medium">Followers</button>
+                <button class="px-4 py-1.5 rounded-md text-neutral-400 hover:text-white transition-colors text-sm font-medium">Following</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-sm hover:border-neutral-700 transition-all group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex gap-3 items-center">
+                        <img src="https://placehold.co/60x60/222/fff?text=MK" class="w-12 h-12 rounded-full border border-neutral-800 object-cover">
+                        <div>
+                            <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">@movieking99</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-neutral-400 text-sm mb-4 line-clamp-1">
+                    Horror aficionado and physical media collector.
+                </p>
+
+                <div class="mb-5">
+                    <p class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider mb-2">Favorites</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <img src="https://placehold.co/100x150/111/fff?text=X" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/222/fff?text=Pearl" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/333/fff?text=MaXXXine" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                    </div>
+                </div>
+
+                <button class="w-full py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-black font-bold text-sm transition-colors shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                    <i class="fa-solid fa-plus mr-1"></i> Follow
+                </button>
+            </div>
+
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-sm hover:border-neutral-700 transition-all group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex gap-3 items-center">
+                        <img src="https://placehold.co/60x60/444/fff?text=AL" class="w-12 h-12 rounded-full border border-neutral-800 object-cover">
+                        <div>
+                            <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">@ana_films</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-neutral-400 text-sm mb-4 line-clamp-1">
+                    Trying to watch every Oscar winner since 1990.
+                </p>
+
+                <div class="mb-5">
+                    <p class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider mb-2">Favorites</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <img src="https://placehold.co/100x150/555/fff?text=Moonlight" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/666/fff?text=Parasite" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/777/fff?text=EEAAO" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                    </div>
+                </div>
+
+                <button class="w-full py-2 rounded-lg border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 hover:bg-neutral-800 font-medium text-sm transition-all">
+                    Following
+                </button>
+            </div>
+
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-sm hover:border-neutral-700 transition-all group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex gap-3 items-center">
+                        <img src="https://placehold.co/60x60/888/fff?text=KD" class="w-12 h-12 rounded-full border border-neutral-800 object-cover">
+                        <div>
+                            <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">@kieran_dev</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-neutral-400 text-sm mb-4 line-clamp-1">
+                    Sci-Fi geek. Dune is life.
+                </p>
+
+                <div class="mb-5">
+                    <p class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider mb-2">Favorites</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <img src="https://placehold.co/100x150/999/fff?text=Dune" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/000/fff?text=Arrival" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/111/fff?text=BR2049" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                    </div>
+                </div>
+
+                <button class="w-full py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-black font-bold text-sm transition-colors shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                    <i class="fa-solid fa-plus mr-1"></i> Follow
+                </button>
+            </div>
+
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-sm hover:border-neutral-700 transition-all group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex gap-3 items-center">
+                        <img src="https://placehold.co/60x60/222/fff?text=NO" class="w-12 h-12 rounded-full border border-neutral-800 object-cover">
+                        <div>
+                            <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">@time_warp</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-neutral-400 text-sm mb-4 line-clamp-1">
+                    If it's not shot on IMAX, I'm not watching it.
+                </p>
+
+                <div class="mb-5">
+                    <p class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider mb-2">Favorites</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <img src="https://placehold.co/100x150/333/fff?text=Tenet" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/444/fff?text=Inception" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/555/fff?text=Interstellar" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                    </div>
+                </div>
+
+                <button class="w-full py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-black font-bold text-sm transition-colors shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                    <i class="fa-solid fa-plus mr-1"></i> Follow
+                </button>
+            </div>
+
+             <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-sm hover:border-neutral-700 transition-all group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex gap-3 items-center">
+                        <img src="https://placehold.co/60x60/666/fff?text=CC" class="w-12 h-12 rounded-full border border-neutral-800 object-cover">
+                        <div>
+                            <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">@arthouse_fan</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-neutral-400 text-sm mb-4 line-clamp-1">
+                    French New Wave and Japanese Classics.
+                </p>
+
+                <div class="mb-5">
+                    <p class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider mb-2">Favorites</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <img src="https://placehold.co/100x150/777/fff?text=7Samurai" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/888/fff?text=Breathless" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/999/fff?text=Persona" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                    </div>
+                </div>
+
+                 <button class="w-full py-2 rounded-lg border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 hover:bg-neutral-800 font-medium text-sm transition-all">
+                    Following
+                </button>
+            </div>
+
+             <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-sm hover:border-neutral-700 transition-all group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex gap-3 items-center">
+                        <img src="https://placehold.co/60x60/000/fff?text=A24" class="w-12 h-12 rounded-full border border-neutral-800 object-cover">
+                        <div>
+                            <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">@indie_vibes</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-neutral-400 text-sm mb-4 line-clamp-1">
+                    Sad movies make me happy.
+                </p>
+
+                <div class="mb-5">
+                    <p class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider mb-2">Favorites</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <img src="https://placehold.co/100x150/111/fff?text=Aftersun" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/222/fff?text=PastLives" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                        <img src="https://placehold.co/100x150/333/fff?text=LadyBird" class="rounded aspect-[2/3] object-cover border border-neutral-800 hover:opacity-80 transition-opacity">
+                    </div>
+                </div>
+
+                <button class="w-full py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-black font-bold text-sm transition-colors shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                    <i class="fa-solid fa-plus mr-1"></i> Follow
+                </button>
+            </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+            <button class="bg-neutral-900 border border-neutral-800 text-neutral-300 px-8 py-3 rounded-full text-sm font-medium hover:text-white hover:border-neutral-600 transition-colors">
+                Load More Users
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-8 text-center mt-auto">
+        <p class="text-xs text-neutral-600">&copy; 2024 CineLog Inc.</p>
+    </footer>
+
+</body>
+</html>

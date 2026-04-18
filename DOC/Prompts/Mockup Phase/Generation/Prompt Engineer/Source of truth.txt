@@ -1,0 +1,14 @@
+**Task:** Crystallize our plan into a System Context file.
+
+Please create a new file in the root directory named `.cursorrules` (or `project_context.md` if not using Cursor). 
+
+**File Content Requirements:**
+1.  **Project Summary:** "Letterboxd-style movie platform using Next.js 16."
+2.  **Tech Stack:** Strict rules (Next.js 16 App Router, Server Components default, Tailwind, TypeScript).
+3.  **Component Architecture:** Paste the list of "Shared Components" vs "Page Components" we just agreed on.
+4.  **Coding Rules:**
+    * "Always check `@components` before creating new UI."
+    * "Use `server-only` package for data fetching files."
+    * "No `useEffect` for data fetching; use RSCs."
+
+**Goal:** This file will be the "Source of Truth" for all future agents working on this repo.

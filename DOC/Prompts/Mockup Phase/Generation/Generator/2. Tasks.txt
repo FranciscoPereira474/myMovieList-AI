@@ -1,0 +1,247 @@
+**Task 1: The Homepage (`/`)**
+Based on **Section 3.2** of the specs, generate a single HTML file containing the following:
+1.  **Global Nav:** Sticky top, with Search Bar, User Avatar, and Links.
+2.  **Hero Section:** Full-width "HeroCarousel" logic (simulate a trending movie with a large backdrop).
+3.  **Horizontal Lists:** Implement the `MovieListPreview` component logic for:
+    - "Recommendations"
+    - "Trending Reviews"
+    - "Popular Lists"
+    - "Highest Rated"
+4.  **Footer:** Simple site map.
+
+**Code Requirement:**
+- Provide the complete, single-file HTML code.
+- Ensure `overflow-x-auto` is used for the horizontal scrolling lists.
+- Use distinct visual hierarchy (H1, H2, badges for ratings).
+- **Do not** write JS logic, but create the UI states (e.g., "Sign In" button vs User Avatar) assuming a "Logged In" state for this mockup.
+
+
+
+**Task 2: Movie Details Page (`/movie/[id]`)**
+Great job on the homepage. Now, create a new HTML file for the **Movie Details Page** based on **Section 3.3** of the specs.
+
+**Key Layout Requirements:**
+1.  **Backdrop Header:** A large image at the top that fades into the content.
+2.  **Two-Column Layout:**
+    - **Left (Sticky):** High-res poster, `MovieStats` (Rating numeric), `RatingsDistribution` (visualize a bar chart using HTML/CSS divs), and the `MovieActions` panel (Watchlist/Rate buttons).
+    - **Right (Main):** Title, Metadata (Year, Director), Genre Buttons, Plot Overview, Cast (Horizontal Scroll), and Reviews (Tabbed interface).
+3.  **Visuals:** Maintain the "Modern Dark Mode" consistency. Make the "Rate" and "Watchlist" buttons prominent CTA (Call to Action) elements.
+
+**Output:** Provide the full HTML code using the same Tailwind CDN setup.
+
+
+
+**Task 3: User Profile Page (`/user/[username]`)**
+Excellent. Now, generate the **User Profile** mockup based on **Section 3.4** of the specs. This page needs to feel personal and data-rich, similar to a social media profile.
+
+**Key Layout Requirements:**
+1.  **Profile Header:**
+    - Large User Avatar (Circular).
+    - Username & Bio.
+    - **Stats Row:** Display "Followers" and "Following" counts distinctly.
+    - **Action Button:** A "Follow" button (styled as an optimistic UI toggle).
+2.  **Tabbed Content Area:**
+    - Create a navigation row for: "Ratings", "Recent Activity", "Watchlist", "Lists", "Saved Lists".
+    - **Active Tab State:** Visually highlight "Recent Activity" as the active tab.
+3.  **Active Tab Content (Recent Activity):**
+    - Show a mixed feed or grid of `MovieCard` elements representing the last 10 logged movies.
+    - Include a small "Star Rating" overlay on these cards to indicate the user's score.
+4.  **Sidebar/Secondary Section:**
+    - Display a condensed version of "Recent Reviews" (List of `ReviewCard`) to the side or below the main stats.
+
+**Visual Focus:**
+- Ensure the "Follow" button pops (use a brand accent color).
+- Keep the layout clean; profiles can get cluttered. Use whitespace effectively between the header and the content grid.
+
+
+
+**Task 4: Discovery Grid (`/movies`)**
+For the final major layout, create the **Movie Discovery Page** based on **Section 3.5**. This is the primary search and browse interface.
+
+**Key Layout Requirements:**
+1.  **Layout Structure:** A standard "Sidebar + Main Content" layout.
+    - **Sidebar (Left):**
+        - **Filter Panel:** Accordions/Checkboxes for "Genres" (Action, Horror, etc.) and "Decades".
+        - **Sort Dropdown:** A styled select input for "Popularity", "Rating", "Date".
+    - **Main Content (Right):**
+        - **Pagination:** A numbered pagination bar at the bottom.
+        - **The Grid:** A responsive CSS Grid of `MovieCard` components.
+2.  **Responsive Behavior:**
+    - On Desktop: Sidebar is visible.
+    - On Mobile: Sidebar should be hidden behind a "Filter" button (you can mock this visually).
+3.  **Card Detail:**
+    - Ensure the `MovieCard` in this grid shows the Poster and the "Rating Badge" (e.g., a small box with "4.2" in the corner).
+
+**Output:** Full HTML code. Use Tailwind's `grid-cols` utilities to handle the responsiveness (e.g., `grid-cols-2 md:grid-cols-4 lg:grid-cols-5`).
+
+
+
+**Task 5: List Details Page (`/list/[id]`)**
+Generate the HTML/CSS for a **User-Created List** page, based on **Section 3.7**.
+
+**Key Layout Requirements:**
+1.  **List Header:**
+    - Centered or prominent layout containing: List Title (e.g., "Best Horror of the 80s"), Description (text block), and Author (Avatar + Name).
+    - **Stats:** Show "Item Count" (e.g., 24 films) and "Likes/Saves".
+    - **Action Bar:** A prominent "Save List" button (outline style) and "Share" button.
+2.  **The Content Grid:**
+    - A responsive grid displaying the movies in this list.
+    - Unlike the main discovery grid, these cards should optionally show a "Rank" number (1, 2, 3...) overlaying the poster corner if the list is ranked.
+3.  **Comments Section:**
+    - Below the grid, add a section for "Comments".
+    - Mockup 2-3 sample comments (Avatar + Name + Text) to show spacing.
+
+**Visual Aesthetic:**
+- Give the List Header a subtle gradient background or a blurred backdrop based on one of the movie posters to distinguish it from the standard page background.
+
+
+
+**Task 6: Review Details Page (`/review/[id]`)**
+Create the **Full Review Page** based on **Section 3.7**. This page focuses on reading long-form text.
+
+**Key Layout Requirements:**
+1.  **Split Layout (Desktop):**
+    - **Main Column (Left/Center - 66%):**
+        - Review Header: Star Rating (large), "Watched on [Date]", and "Spoiler" tag (if applicable).
+        - **Review Body:** Long-form text. Use distinct typography styling (larger line-height, lighter gray text) for readability. Include a blockquote to show Markdown support styling.
+        - **Footer:** "Like" button, "Reply" button.
+    - **Sidebar (Right - 33%):**
+        - **Movie Context Card:** A summarized card showing the Movie Poster, Title, Year, and a "View Movie" button. This reminds the user what is being reviewed.
+2.  **Spoiler UI:**
+    - Create a visual state for a "Spoiler Warning" (e.g., a blurred text block or a warning banner) that might appear before the text.
+
+**Visual Focus:**
+- Ensure the typography for the review body feels like a high-quality article (e.g., `prose` or `prose-invert` classes in Tailwind).
+
+
+
+**Task 7: Interactive Modals (Search & Review Form)**
+To complete the mockups, please generate the HTML/CSS code for two specific **Modal/Overlay components** defined in **Section 4.4**. These can be provided as standalone code blocks I can drop into any page.
+
+**1. Global Search Modal (Command-K style):**
+- A centered modal dialog with a dimmed backdrop.
+- **Input Field:** Large text input with a search icon.
+- **Results List:** Mockup "Instant Results" grouped by category (e.g., "Movies", "People", "Lists").
+- **Visuals:** Minimalist, high contrast borders.
+
+**2. Review/Rate Form (The "Log" Modal):**
+- A modal used to log a movie.
+- **Elements:**
+    - Selected Movie Poster (tiny thumbnail).
+    - **Date Picker:** "Watched on..."
+    - **Star Rater:** 5 interactive stars (hover state).
+    - **Text Area:** "Add a review..."
+    - **Toggle:** "Contains Spoilers".
+    - **Buttons:** "Cancel" (Gray) and "Save" (Brand Color).
+
+**Output:** Provide the HTML for these two modals as if they are currently "open" and visible on the screen.
+
+
+
+**Task 8: Global Discovery Feeds (`/reviews` and `/lists`)**
+We need to visualize the global community content. Please create HTML/CSS mockups for two specific feed layouts based on **Section 3.5**.
+
+**1. Global Review Index (`/reviews`):**
+- **Layout:** Use a **Masonry Layout** (multi-column waterfall, similar to Pinterest) to accommodate reviews of different lengths.
+- **Card Style:** Use the `ReviewCard` logic.
+    - Header: User Avatar + Name + Star Rating.
+    - Body: Review text snippet.
+    - Footer: Movie Title (small accent) + "Like" count.
+- **Sidebar:** Include filters for "Hide Spoilers" and "Rating Range".
+
+**2. Global List Index (`/lists`):**
+- **Layout:** Standard responsive Grid.
+- **Card Style (`ListCard`):** This needs a specific visual:
+    - **Visual Preview:** A collage of 3 small movie posters (overlapping or grid 2x2) representing the list content.
+    - **Meta:** List Title (Bold), User Name, and "Item Count".
+- **Sidebar:** Sort options (Newest, Most Popular).
+
+**Output:** You can combine these into one HTML file with two distinct sections, or separate them. Focus heavily on making the **Review Masonry** look balanced using Tailwind's column utilities.
+
+
+
+**Task 9: Recommendations Dashboard (`/recommendations`)**
+Create the **Personalized Recommendations** page based on **Section 3.6**. This page should feel special, like a "For You" section.
+
+**Key Layout Requirements:**
+1.  **Header:**
+    - A personalized greeting (e.g., "Top Picks for [Username]").
+    - A "Refresh/Shuffle" button to get new suggestions.
+2.  **Content Layout (Grouped):**
+    - Instead of just one giant grid, create categorized rows based on the logic:
+        - **"Because you watched [Movie X]"**: A horizontal row of 5 similar movies.
+        - **"Hidden Gems"**: High-rated but low-popularity movies.
+        - **"Your Top Genres"**: A grid section for the user's favorite genre.
+3.  **Empty State / Starter Pack (The Fallback):**
+    - Create a visible section that simulates a "New User" state.
+    - Text: "Not enough data yet? Rate these movies to calibrate:"
+    - UI: A grid of 10 famous movies with empty "Star" outlines ready to be clicked.
+
+**Visual Aesthetic:**
+- Use a subtle gradient background for the "Top Picks" section to differentiate it from the rest of the dark app.
+
+
+
+**Task 10: User Network Page (Followers/Following)**
+We need a layout to display lists of users, specifically for the "Followers" and "Following" pages linked from a User Profile.
+
+**Key Layout Requirements:**
+1.  **Header:**
+    - Simple header indicating context (e.g., "People following @lyra" or "Members").
+    - **Tabs/Toggle:** A prominent toggle to switch between "Followers" and "Following" without reloading the page (visually).
+2.  **User Grid:**
+    - Use a responsive Grid layout (not just a vertical list).
+    - **Rich User Card:** Each card must contain:
+        - **Header:** User Avatar (Medium size) + Display Name + Handle (`@username`).
+        - **Bio:** A truncated 1-line bio snippet.
+        - **Taste Preview (Crucial):** A mini-row of 3 tiny movie posters (representing their "Top 3" or "Favorites"). This helps viewers decide if they have similar taste.
+        - **Action:** A "Follow/Unfollow" button.
+3.  **Pagination:** Standard "Load More" button at the bottom.
+
+**Visual Aesthetic:**
+- The "Taste Preview" posters should be small but recognizable.
+- The "Follow" button should be the clear visual priority on the card.
+
+**Output:** A single HTML file representing the `/user/followers` view.
+
+
+
+**Task 11: Create/Edit List Interface**
+We missed the core feature of user curation. Create a high-fidelity HTML/CSS mockup for the **"Create New List" Page**.
+
+**Key Layout Requirements:**
+1.  **Header Section:**
+    - Large Input for "List Title" (Placeholder: "Name your list...").
+    - Text Area for "Description" (Markdown supported).
+    - **Settings:** A Toggle switch for "Public/Private".
+2.  **The "Builder" Area (Split Layout):**
+    - **Left Side (Search):** A distinct search bar ("Add a film...") with a "Search Results" dropdown mock visible (showing 2-3 movies ready to be added).
+    - **Right Side (Current List):**
+        - **Empty State:** If the list is empty, show a dashed-border box saying "Your list is empty. Search for movies to add them."
+        - **Populated State:** Mockup 3 items already in the list. Each item should be a horizontal row containing:
+            - Number (Rank).
+            - Tiny Poster + Title.
+            - **Actions:** A "Drag Handle" icon (six dots) on the left, and a "Remove" (X) button on the right.
+3.  **Sticky Footer:**
+    - "Cancel" and "Save List" buttons fixed to the bottom of the viewport.
+
+**Visual Focus:**
+- Make it look like a productivity tool—clean lines, high contrast for the inputs.
+
+
+
+**Task 12: Authentication Pages (Login/Register)**
+Create a shared layout for the **Sign In / Sign Up** pages.
+
+**Layout Structure:**
+1.  **Split Screen Layout:**
+    - **Left (60%):** A large, high-quality "Hero Image" or a collage of movie posters with a dark overlay and the App Logo centered.
+    - **Right (40%):** The form container.
+2.  **Form Elements:**
+    - **Header:** "Welcome back" (for Login) or "Join the community" (for Register).
+    - **Social Auth:** Buttons for "Continue with Google" and "Continue with GitHub" (use generic icons).
+    - **Divider:** A "— OR —" text divider.
+    - **Inputs:** Email and Password (styled with floating labels or clear placeholders).
+    - **Footer:** "Forgot Password?" link and "Don't have an account? Sign up".
+
+**Output:** Provide the HTML for the **Login** version. The CSS should handle the split layout responsively (on mobile, hide the image and make the form 100% width).

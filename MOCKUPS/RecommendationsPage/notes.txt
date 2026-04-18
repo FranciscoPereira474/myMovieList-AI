@@ -1,0 +1,3 @@
+Remove "based on movies X and Y". The algorithm will take in count all user ratings. Say something like "based on your preferences"...
+
+Remove the "rate more movies to see more" button. A simple message "Reached the end of your suggestions." is more simple.

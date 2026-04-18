@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Movies | CineLog</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        brand: {
+                            400: '#4ade80', 
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom checkbox style hack using Tailwind utilities primarily, but ensuring hidden inputs work */
+        .checkbox-wrapper input:checked + div {
+            background-color: #22c55e;
+            border-color: #22c55e;
+            color: black;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-500 selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-black font-bold text-lg">C</div>
+                        <span class="text-xl font-bold tracking-tight group-hover:text-brand-400 transition-colors">CineLog</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-neutral-400">
+                        <a href="#" class="text-white font-semibold transition-colors">Films</a>
+                        <a href="#" class="hover:text-white transition-colors">Lists</a>
+                        <a href="#" class="hover:text-white transition-colors">Members</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="text-neutral-400 hover:text-white"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="h-8 w-8 rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://placehold.co/100x100/333/fff?text=ME" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-tight">Explore Movies</h1>
+                <p class="text-neutral-400 text-sm mt-1">Found 12,402 results</p>
+            </div>
+        </div>
+
+        <div class="lg:hidden mb-6 flex gap-3">
+            <button class="flex-1 bg-neutral-900 border border-neutral-800 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-medium">
+                <i class="fa-solid fa-sliders"></i> Filters
+            </button>
+            <div class="relative flex-1">
+                <select class="w-full appearance-none bg-neutral-900 border border-neutral-800 text-white py-3 pl-4 pr-8 rounded-lg font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                    <option>Popularity</option>
+                    <option>Top Rated</option>
+                    <option>Newest</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-neutral-400">
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <aside class="hidden lg:block space-y-8 sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto no-scrollbar pr-2">
+                
+                <div class="space-y-3">
+                    <h3 class="text-sm font-bold text-neutral-200 uppercase tracking-wider">Sort By</h3>
+                    <div class="relative">
+                        <select class="w-full appearance-none bg-neutral-900 border border-neutral-800 hover:border-neutral-600 text-white py-2.5 pl-3 pr-8 rounded-md text-sm transition-colors focus:ring-1 focus:ring-brand-500 focus:outline-none">
+                            <option value="popularity.desc">Popularity Descending</option>
+                            <option value="rating.desc">Highest Rated</option>
+                            <option value="release_date.desc">Release Date Descending</option>
+                            <option value="revenue.desc">Box Office</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-neutral-400">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-neutral-800">
+
+                <div class="space-y-3">
+                    <h3 class="text-sm font-bold text-neutral-200 uppercase tracking-wider">Genres</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 cursor-pointer group checkbox-wrapper">
+                            <input type="checkbox" checked class="hidden peer">
+                            <div class="w-5 h-5 border border-neutral-600 rounded bg-neutral-900 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check text-xs opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm">Action</span>
+                        </label>
+
+                         <label class="flex items-center gap-3 cursor-pointer group checkbox-wrapper">
+                            <input type="checkbox" class="hidden peer">
+                            <div class="w-5 h-5 border border-neutral-600 rounded bg-neutral-900 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check text-xs opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm">Adventure</span>
+                        </label>
+
+                         <label class="flex items-center gap-3 cursor-pointer group checkbox-wrapper">
+                            <input type="checkbox" checked class="hidden peer">
+                            <div class="w-5 h-5 border border-neutral-600 rounded bg-neutral-900 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check text-xs opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm">Sci-Fi</span>
+                        </label>
+
+                        <label class="flex items-center gap-3 cursor-pointer group checkbox-wrapper">
+                            <input type="checkbox" class="hidden peer">
+                            <div class="w-5 h-5 border border-neutral-600 rounded bg-neutral-900 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check text-xs opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm">Comedy</span>
+                        </label>
+                         <label class="flex items-center gap-3 cursor-pointer group checkbox-wrapper">
+                            <input type="checkbox" class="hidden peer">
+                            <div class="w-5 h-5 border border-neutral-600 rounded bg-neutral-900 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check text-xs opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm">Drama</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group checkbox-wrapper">
+                            <input type="checkbox" class="hidden peer">
+                            <div class="w-5 h-5 border border-neutral-600 rounded bg-neutral-900 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check text-xs opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm">Horror</span>
+                        </label>
+                    </div>
+                </div>
+
+                <hr class="border-neutral-800">
+
+                <div class="space-y-3">
+                    <h3 class="text-sm font-bold text-neutral-200 uppercase tracking-wider">Decades</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-bold border border-brand-500">2020s</button>
+                        <button class="px-3 py-1 rounded-full bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 hover:text-white transition-colors text-xs">2010s</button>
+                        <button class="px-3 py-1 rounded-full bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 hover:text-white transition-colors text-xs">2000s</button>
+                        <button class="px-3 py-1 rounded-full bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 hover:text-white transition-colors text-xs">1990s</button>
+                        <button class="px-3 py-1 rounded-full bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 hover:text-white transition-colors text-xs">1980s</button>
+                    </div>
+                </div>
+
+                <hr class="border-neutral-800">
+
+                <button class="w-full bg-white text-black font-bold py-3 rounded hover:bg-neutral-200 transition-colors">
+                    Apply Filters
+                </button>
+            </aside>
+
+            <div class="lg:col-span-3">
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-8">
+                    
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-brand-900/20">
+                            <img src="https://placehold.co/400x600/222/fff?text=Dune+2" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-brand-400 border border-white/10 shadow-sm">
+                                4.2
+                            </div>
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-brand-500 text-white hover:text-black flex items-center justify-center transition-colors">
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-pink-600 text-white flex items-center justify-center transition-colors">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white transition-colors">Dune: Part Two</h3>
+                            <span class="text-xs text-neutral-500">2024</span>
+                        </div>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/333/fff?text=Furiosa" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-green-400 border border-white/10">3.9</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Furiosa</h3>
+                            <span class="text-xs text-neutral-500">2024</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/444/fff?text=Civil+War" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-green-400 border border-white/10">4.0</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Civil War</h3>
+                            <span class="text-xs text-neutral-500">2024</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/555/fff?text=Challengers" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-green-400 border border-white/10">3.8</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Challengers</h3>
+                            <span class="text-xs text-neutral-500">2024</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/666/fff?text=Deadpool" alt="Poster" class="w-full h-full object-cover">
+                             <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-neutral-400 border border-white/10">NR</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Deadpool & Wolverine</h3>
+                            <span class="text-xs text-neutral-500">2024</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/111/fff?text=Godzilla" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-green-400 border border-white/10">3.5</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Godzilla x Kong</h3>
+                            <span class="text-xs text-neutral-500">2024</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/222/fff?text=Dune+1" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-brand-400 border border-white/10">4.1</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Dune</h3>
+                            <span class="text-xs text-neutral-500">2021</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/333/fff?text=Blade+Runner" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-brand-400 border border-white/10">4.3</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Blade Runner 2049</h3>
+                            <span class="text-xs text-neutral-500">2017</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/444/fff?text=The+Creator" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-green-400 border border-white/10">3.6</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">The Creator</h3>
+                            <span class="text-xs text-neutral-500">2023</span>
+                        </div>
+                    </div>
+
+                     <div class="group cursor-pointer">
+                        <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-neutral-900 shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                            <img src="https://placehold.co/400x600/555/fff?text=Rebel+Moon" alt="Poster" class="w-full h-full object-cover">
+                            <div class="absolute top-1 right-1 bg-black/70 backdrop-blur-md px-1.5 py-1 rounded text-xs font-bold text-neutral-400 border border-white/10">2.4</div>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-sm font-semibold text-neutral-200 truncate group-hover:text-white">Rebel Moon</h3>
+                            <span class="text-xs text-neutral-500">2023</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-16 flex justify-center">
+                    <nav class="flex items-center gap-2">
+                        <button class="w-10 h-10 flex items-center justify-center rounded-md border border-neutral-800 text-neutral-500 hover:text-white hover:border-neutral-600 transition-colors disabled:opacity-50">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        
+                        <button class="w-10 h-10 flex items-center justify-center rounded-md bg-brand-600 text-white font-bold border border-brand-500 shadow-[0_0_10px_rgba(34,197,94,0.3)]">1</button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-md border border-neutral-800 text-neutral-400 hover:bg-neutral-900 hover:text-white transition-colors">2</button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-md border border-neutral-800 text-neutral-400 hover:bg-neutral-900 hover:text-white transition-colors">3</button>
+                        <span class="px-2 text-neutral-600">...</span>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-md border border-neutral-800 text-neutral-400 hover:bg-neutral-900 hover:text-white transition-colors">42</button>
+
+                         <button class="w-10 h-10 flex items-center justify-center rounded-md border border-neutral-800 text-neutral-500 hover:text-white hover:border-neutral-600 transition-colors">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-8 text-center">
+        <p class="text-xs text-neutral-600">&copy; 2024 CineLog Inc.</p>
+    </footer>
+
+</body>
+</html>

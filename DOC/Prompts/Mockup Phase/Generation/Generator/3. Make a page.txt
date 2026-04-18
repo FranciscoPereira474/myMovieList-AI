@@ -1,0 +1,16 @@
+**Role:** Senior Next.js Developer
+**Context:** Building the 'ListsPage/[username]' based on the architecture in 'project_context.md', displaying both the saved and the lists created by a given user.
+
+**Input:**
+* **Mockup:** I am attaching the HTML/CSS for the home page (reference file).
+* **Repo:** Please scan `@components` to see what already exists.
+
+**Task:**
+Refactor the Home Page HTML into Next.js 16.
+
+**Procedure:**
+1.  **Check:** Look at the "Shared Components" list in our rules file. Do we have the 'Navbar' and 'MovieCard' yet?
+    * *If yes:* Import them.
+    * *If no:* Create them as atomic components first.
+2.  **Assemble:** Build `page.tsx` using these components.
+3.  **Data:** Integrate with already existing systems/pages and db

@@ -1,0 +1,7 @@
+**Refinement Task:**
+Great work on the layouts. However, for the sake of modularity, please split the previous code into **two separate HTML files**:
+
+1.  **`reviews.html`**: Containing only the Navigation, the Global Review Index (Masonry Layout), and the Footer.
+2.  **`lists.html`**: Containing only the Navigation, the Global List Index (Grid Layout), and the Footer.
+
+**Constraint:** Ensure both files maintain the same global styling and navigation bar consistency. Output the full code for both files separately.

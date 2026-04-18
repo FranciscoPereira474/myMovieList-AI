@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{lscape}
+
+\begin{document}
+
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+
+\small % Add this line to reduce font size
+
+\begin{longtable}{|p{1cm}|p{3cm}|p{6cm}|p{6cm}|}
+\hline
+\textbf{US ID} & \textbf{Title} & \textbf{Acceptance Criteria} & \textbf{Motive} \\ \hline
+\endfirsthead
+\hline
+\textbf{US ID} & \textbf{Title} & \textbf{Acceptance Criteria} & \textbf{Motive} \\ \hline
+\endhead
+[US1] & Main page &  &  \\ \hline
+[US2] & Movie page &  &  \\ \hline
+[US3] & Movie List Page &  &  \\ \hline
+[US4] & Review Page &  &  \\ \hline
+[US5] & User Authentication &  &  \\ \hline
+[US6] & API Integration &  &  \\ \hline
+[US7] & Database &  &  \\ \hline
+[US1.2] & As a user, i want to see a main page with a top bar for navigation. & - Functional Top bar with "Browse", "Watched Movies", "Watchlist", "User Profile". & : - User should have easy access to different areas of the website. \\ \hline
+[US1.3] & As a user, i want to have personalized recommendations on my main page. & Creation of a algorithm for personalized movie recommendation. & User should get recommendations based on his personality and likings. \\ \hline
+[US3.1] & As a user I want to see a list of movies. & - The list of movies must be displayed. - Upon clicking the movie it navigates to its page. & - Users need a landing page to start exploring and searching for moving. - Users can click on a movie to navigate to its page. \\ \hline
+[US1.4] & As a user, i want to see in my main page "Popular Movies of the Week". & - Show the most watched movies during last week, being able to navigate to each movie page or to see the full list page. & - Popular movies can be attractive to most users. \\ \hline
+[US1.5] & As a user, i want to see the popular reviews of the week in my main page. & - Show the top rated reviews posted during last week for multiple movies, being able to see each review, who wrote it, its rating, post date, related movie and to navigate to that review's page, movie, and user. & - User should be able to access popular reviews for active movie discovery. \\ \hline
+[US2.1] & As a user, I want to see a page for a specific movie. & - Show a page with the title, description, rating, year of release, director, actors, reviews for a specific movie. & - User wants to get more information for a specific movie. \\ \hline
+[US7.1] & As a Developer, i want to store users and movies metadata in data base, so that i can fetch data later. &  &  \\ \hline
+[US3.2] & As a user i want to be able to search for a movie. & - Search box appears for user to input it's search.  - Search must not be case-sensitive.  - When nothing is found, there should be a message saying that. & - The user usually comes with a movie already in mind. Searching makes it quick for him to find the movie. \\ \hline
+[US1.6] & As a user, i want to see the top rated movies of all time. & - Show the top rated movies of all time and their rating. - Be able to navigate to each Movie page or to see the full list page. & - User can know what other users of the website think of said movies. \\ \hline
+[US2.2] & As a user, I want to mark a movie as watched, so that it isnt recommended anymore. & - Ability to mark the movie as watched if logged in. & - User wants to add the movie to the watched list. \\ \hline
+[US1.7] & As a user, i want to access the top rated reviews of all time & - Show the top rated reviews of all time for multiple movies. - Be able to see each review, who wrote it, its rating, post date, related movie and to navigate to that review's page. & User can find valuable reviews and thoughs on particular movies. \\ \hline
+[US3.3] & As a user i want to filter the displayed movies, so that I can easily find movies. & - Multiple categories(gender, actors, director, year, length, rating) can be combined. - There is a way to reset the categories being filtered. - Year filter should be a range.  **Motive**: - If the user wants to look for a certain genre of movies he should be able to do so. &  \\ \hline
+[US2.3] & As a user, I want to add the movie to the watch list. & - Movie is in the watch list & - User wants to watch the movie later \\ \hline
+[US2.4] & As a user, I want to rate a specific movie. & Ability to rate a watched movie if logged in. & User wants to rate the movie. \\ \hline
+[US7.2] & As a developer, i want to store sensitive information with encryption. & - Passwords and other sensitive information must be stored using hash algorithm. & - Prevent exposure of private information. \\ \hline
+[US2.5] & As a user, I want to see the popular reviews for a specific movie. & - Display reviews with the most likes, dislikes and comments. - Clicking on a user or review should navigate to the corresponding page. - Ability to like or dislike the review. - Clicking on comments navigates to the review's page. & User wants to see some popular reviews. \\ \hline
+[US3.4] & As a user i want to be able to sort movies. & - Sort by: ascending/descending, year, rating or lenght. - Upon sorting, list of movies is updated accordingly. & - If the user want to search for a certain series of movies in chronological order, he must be able to. \\ \hline
+[US2.6] & As a user, I want to see the recent reviews for a specific movie. & Display recent reviews. Clicking on a user or review should navigate to the corresponding page. Ability to like or dislike the review. Clicking on comments navigates to the review's page. & User wants to see the most recent reviews for a movie. \\ \hline
+[US2.7] & As a user, I want to write a review for a specific movie. & Ability to make a review of the movie if user is logged in and has watched the movie. & User wants to write his opinion for a movie. \\ \hline
+[US5.1] & As a user, I want to sign up & - Be able to sign up a new user with a non existing email/username and password. - User should choose his preferred genres upon account creation. & - User wants to create a new account. \\ \hline
+[US5.2] & As a user, I want to log in. & Be able to log in as a user with an email/username and password. & User wants to access his account. \\ \hline
+[US4.1] & As a user I want to have a page for reviews, so that I can feel the sense of community. & - Creation of a page for reviews. - Each review should have text, the author of the review, post date, related movie, rating, replies, likes. & - Improve overall community. \\ \hline
+[US7.4] & As a developer, i want the database almost always available, so that i can access the data. & - Data availability is assured by the chosen cloud provider. & - Developers must have data accessible. \\ \hline
+[US9] & User Page &  &  \\ \hline
+[US4.2] & As a  user, I want to rate other people's reviews. & - Rating is only available to logged-in users. - Logged-out users see a prompt to log if they try to rate. & - Rating each other's reviews helps create a sense of participation and community among users. \\ \hline
+[US4.3] & As a user, I want to reply to a review, so that i can express my opinion. & - Reply is only available to logged-in user. - Logged-out users must be asked to log-in if they try to reply to a review. & - Replying to each other's reviews helps create a sense of participation and community among users. \\ \hline
+[US8.1] & As an administrator, I want the full software to be deployed to a cloud environment, so that it is scalable and resilient. & - Application is deployed to a cloud provider. - Users can access the site developed. & - Users can access the service reliably. - Infrastructure must be scalable. \\ \hline
+[US9.1] & As a user, i want to see my profile page, so that i can manage my movie library. & - The user page must display three sections: Recently Watched, Watched, and Plan-to-Watch. - Each movie must show its title, poster, and basic metadata. & - Provide users a space to manage and review their movie preferences and history. \\ \hline
+[US8] & Cloud integration &  &  \\ \hline
+[US6.1] & As a system owner I need all the path and query parameter to resolve successfully so that my website works correctly & 1. All the tested uses of the API within the code work accordingly to what's expected & If the API requests are not working correctly the website won't work. \\ \hline
+[US4.4] & As a system administrator I don't want the replies to have obscene wording, so that the users don't feels discomfort using the website. & The filter system must be implemented and working, filtering or disallowing the review to be posted. & So that manual moderation isn't needed to filter obscene messages. \\ \hline
+[US10] & Navigation Bar &  &  \\ \hline
+[US10.1] & As a user i want to have a navigation bar, so that i can navigate across the website. & A navigation bar is displayed at the top of the screen. All of it's functionalities work as intended. & A navigation bar facilitates the use of the website to the user. \\ \hline
+[US10.4] & As an authenticated user I want to click on watched movies link so that I can navigate to a page containing the list of movies I rated. & Clicking on the link takes the user to the correct page showing the correct information (list of movies the user has rated). This link should only be visible to authenticated users. & Users want to keep track of movies they have rated in the past. \\ \hline
+[US10.2] & As a user I want to click the website logo and be redirected to the main page, so that I can have a easy access to the main page. & The website logo redirects to the main page when clicked. & Easier access to the main page for the user. \\ \hline
+[US10.6] & I as a user want to submit a search query to get related information so that I can easily find a specific content. & If there is a content related to a search query it should be one of the results. & So that users can find a specific content faster than if they were to use filters/sorting. \\ \hline
+[US10.5] & As an authenticated user I want to click on watchlisted movies link so that I can navigate to a page containing the list of movies I added to my watchlist. & Clicking on the link takes the user to the correct page showing the correct information (list of movies the user has added to their watchlist). This link should only be visible to authenticated users. & Users want to keep track of movies they want to watch in the future. \\ \hline
+[US10.3] & As a user a I want to be able to hover the navigation bar and the various predefined movie pages so that i can have a easy access to the movie pages. & Overing the navigation bar shows the predefined movie pages. If clicked it must take users to the complete movie list page. & Helps the user navigate around the website in a intuitive way. \\ \hline
+[US10.7] & As an authenticated user I want to be able to go to my profile and settings page so that I can see information related to my account and settings. & Clicking on user's corner takes user to their profile page. Hovering it can display a dropdown menu with settings' page link. & Users want to access their profile and manage settings. \\ \hline
+[US10.8] & As an unauthenticated user I want to click a sign up/login button, so that I can log in or create an account in the website. & There's a button on the navigation bar that appears only to unauthenticated user that lets them authenticate. & There needs to be a way for users to authenticate in the website. \\ \hline
+[US5.4] & As an authenticated user I want to be able to log out so that I can end my session or change accounts. & Authenticated users can successfully log out. Website reflects this change.  **Motives:** Users should be able to end their session for security reasons. They could also want to log into another account. &  \\ \hline
+[US1.1] & As a user I want to be able to access a main page, so that I can have a intuitive navigation experience. & The website has a main page that has a top bar for navigation and other contents. & A main page contributes to a intuitive website. \\ \hline
+[US9.2] & I as a user want to be able to have and change a profile picture so that I can add personality to my profile. & User's selected picture appears across the website (on user corner, on reviews, on replies, etc.). & Users can express themselves through their profile image. \\ \hline
+
+\end{longtable}
+
+\end{document}

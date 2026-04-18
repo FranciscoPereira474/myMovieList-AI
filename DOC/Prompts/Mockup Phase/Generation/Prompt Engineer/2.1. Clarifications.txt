@@ -1,0 +1,168 @@
+DETAIL using Gemini 3 Pro - Make mockups for the website with the feature technical specifications that I will send below:
+
+## 1. System Architecture & Core Principles
+
+### 1.1 Technical Stack
+* **Framework:** Next.js 16 (App Router).
+* **Database:** Supabase (PostgreSQL).
+* **Authentication:** Supabase Auth (Email/Password + Social Providers).
+* **Styling:** CSS Modules (locally scoped) + Global CSS Variables (design tokens).
+* **Data Fetching:** Server Components (RSC) for initial data; Server Actions for mutations.
+
+### 1.2 State Management Strategy
+* **URL as Source of Truth:** Filters, sorting, search queries, and pagination must use `searchParams` (e.g., `?genre=horror&sort=rating`).
+* **Server State:** Data is fetched on the server and passed down. No client-side `useEffect` fetching for initial page loads.
+* **Client State:** Limited to interactive elements (Forms, Carousels, Optimistic UI updates).
+
+### 1.3 Infinite Scroll Strategy
+* **Vertical Lists (Grids):** "Load More" button or pagination.
+* **Horizontal Lists (Previews):** CSS `overflow-x-scroll` containers with snap points. No auto-scrolling (marquee) to ensure accessibility.
+
+---
+
+## 2. Database Schema Overview
+*See the SQL Script for implementation details.*
+
+* **Core Data:** `movies`, `genres`, `people` (Actors/Directors), `movie_credits`.
+* **User Data:** `profiles` (synced with Auth), `follows`.
+* **Interaction Data:**
+    * `reviews` (Combined Ratings + Text Reviews + "Watched Date" for Diary).
+    * `watchlist` (To watch).
+    * `lists` & `list_items` (Custom user collections).
+    * `list_saves` (Users saving other users' lists).
+    * `comments` (Polymorphic: works for Reviews and Lists).
+* **Performance:**
+    * `movie_stats_view`: Pre-calculated Rating Avg, Count, and Watchlist Count.
+    * `get_recommendations`: SQL function (RPC) for content filtering.
+
+---
+
+## 3. Page Specifications
+
+### 3.1 Global Layout
+* **Navigation Bar:**
+    * Logo (Home Link).
+    * **Global Search:** Modal or Input to search Movies, Users, Lists, Directors, Actors, etc.
+    * Links: Films, Lists, Members.
+    * **User Menu:** Avatar (Dropdown: Profile, Settings, Sign Out) OR "Sign In/Up" buttons.
+    * **Notification Bell:** (Phase 2) Alerts for replies/follows.
+* **Footer:** Sitemap links, attribution (TMDB).
+
+### 3.2 Homepage (`/`)
+* **Hero Section (Trending):**
+    * *Component:* `HeroCarousel`.
+    * *Logic:* Carousel of top 5 trending movies. Large backdrop, Title, Rating, "View Info" button.
+* **Recommendations Row:**
+    * *Component:* `MovieListPreview` (Horizontal Scroll).
+    * *Logic:* "Based on your taste" (If logged in) OR "Popular Genres" (If logged out).
+* **Trending Reviews:**
+    * *Component:* `ReviewListPreview` (Horizontal Scroll).
+    * *Logic:* Recent reviews from community with high engagement.
+* **Popular Lists:**
+    * *Component:* `ListListPreview`.
+    * *Logic:* Lists with the most "Saves" this week.
+* **Highest Rated:**
+    * *Component:* `MovieListPreview`.
+    * *Logic:* All-time highest rated movies (min X ratings).
+
+### 3.3 Movie Details Page (`/movie/[id]`)
+* **Layout:** "Backdrop" header fading into content.
+* **Left Column (Sticky):**
+    * **Poster:** High-res image.
+    * **MovieStats:** Numeric Rating (e.g., 4.2), Rating Count.
+    * **RatingsDistribution:** Bar chart visualization of star spread.
+    * **MovieActions:**
+        * *Logged Out:* "Sign in to log".
+        * *Logged In:* "Rate" (Star interaction), "Watchlist" (Toggle), "Add to List" (Dropdown).
+* **Main Column:**
+    * **Header:** Title, Year, Director (Link to filter).
+    * **Genres:** Buttons linking to Genre Filter.
+    * **Overview:** Plot summary.
+    * **Cast:** `MovieCast` component (Horizontal scroll of `People` cards).
+    * **Reviews:** `ReviewList` (Tabs: "Popular", "Recent").
+    * **ReviewForm:** Rich text input + Rating (Collapsible).
+
+### 3.4 User Profile (`/user/[username]`)
+* **Header:** Large Avatar, Username, Bio.
+    * **Stats:** Followers Count, Following Count.
+    * **Actions:** "Follow/Unfollow" button (if not own profile).
+* **Content Tabs/Sections:**
+    1.  **Ratings:** `MovieListPreview` (Highest rated movies by the user).
+    2.  **Recent Activity:** `MovieListPreview` (Last 10 logged movies).
+    3.  **Recent Reviews:** List of `ReviewCard`.
+    4.  **Watchlist:** `MovieListPreview` (Last added).
+    5.  **Lists:** `ListListPreview` (Created by user).
+    6.  **Saved Lists:** `ListListPreview` (Saved by user).
+
+### 3.5 Discovery Pages
+* **Movie Grid (`/movies`):**
+    * *Features:* Filter Sidebar (Genres, Decades), Sort Dropdown (Pop, Rating, Date).
+    * *Grid:* Responsive grid of `MovieCard`.
+    * *Pagination:* Numbered pages (server-side routing).
+* **Review Index (`/reviews`):** Global feed of reviews (Filter by: Spoilers, Rating. Sorting by: Recent, Popular, etc.).
+* **List Index (`/lists`):** Global feed of user lists (Filter by: Newest, Popular).
+
+### 3.6 Recommendations (`/recommendations`)
+* **Access:** Protected Route.
+* **Logic:** Executes `get_recommendations` RPC.
+* **UI:** Grid of movies.
+* **Fallback:** If user has 0 ratings, show "Starter Pack" (Top 50 must-watch).
+
+### 3.7 Detail Pages (Reviews & Lists)
+* **Review Details (`/review/[id]`):**
+    * Full review text (Markdown support).
+    * Comments section (`ExpandList` logic).
+    * Sidebar: Movie info summary.
+* **List Details (`/list/[id]`):**
+    * List Header (Title, Description, Author).
+    * "Save List" button.
+    * Full `MovieGrid` of items in the list.
+    * Comments section.
+
+---
+
+## 4. Component Library (Key "Legos")
+
+### 4.1 Media Components
+* **`MovieCard`:** Poster, Title (on hover/mobile), Rating Badge.
+    * *Props:* `movie` object, `showStats` (bool), `userRating` (optional).
+* **`MovieStats`:** Small block displaying average stars.
+* **`MovieCast`:** Horizontal scroll of `PersonCard` (Photo + Name + Role).
+* **`GenreButton`:** Pill-shaped link styling.
+
+### 4.2 Content Containers
+* **`MovieGrid`:** CSS Grid container (Responsive).
+* **`MovieListPreview`:** Horizontal scroll container with "View All" label.
+* **`ReviewListPreview`:** Horizontal scroll container with "View All" label.
+* **`ListListPreview`:** Horizontal scroll container with "View All" label.
+* **`ExpandList`:** Wrapper for long lists (Comments/Reviews) showing top 3 items + "Show More" button.
+
+### 4.3 Social Components
+* **`ReviewCard`:** User Avatar, Star Rating, Text Snippet, Movie Poster (optional context), Spoiler Warning Functionality.
+* **`ListCard`:** Title, stacked preview of 3 movie posters, Author.
+* **`UserAvatar`:** Universal circle profile image with fallback initials.
+* **`ShareButton`:** Copies current URL to clipboard + Toast confirmation.
+* **`FollowButton`:** Optimistic UI button (toggles state immediately).
+
+### 4.4 Forms & Interactive
+* **`SearchDialog`:** Command-K style modal for global search.
+* **`ReviewForm`:** Star rater + Text Area + Spoiler Flag.
+* **`MovieActions`:** The control panel for a movie (Watchlist/Rate).
+
+---
+
+## 5. Security & Data Flow
+
+### 5.1 Authentication Boundaries
+* **Public Access:** Homepage, Movie Details, User Profiles, Discovery Grids.
+* **Protected Access:** Writing Reviews, Rating, Creating Lists, Following, Recommendations Page.
+* **Admin Access:** (Future Scope) Editing Movie Metadata.
+
+### 5.2 Row Level Security (RLS)
+* *Strict policies applied in Supabase:* Users can only `INSERT`/`UPDATE`/`aDELETE` their own rows (`auth.uid() = user_id`).
+* Public data (Movies, People) is read-only for everyone.
+
+### 5.3 Performance Optimization
+* **Image Optimization:** Use `next/image` for all posters (TMDB CDN).
+* **Debouncing:** Search inputs must be debounced (300ms) to save API calls.
+* **Pagination:** Limit fetching to 20 items per page/scroll.

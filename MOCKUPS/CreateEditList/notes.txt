@@ -1,0 +1,1 @@
+The save list and cancel buttons are inside a literal footer. Make them floaty and sticky at the bottom of the page, placing a bluring gradient behind it.

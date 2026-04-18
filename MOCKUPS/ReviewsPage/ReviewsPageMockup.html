@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Reviews | CineLog</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        brand: {
+                            400: '#4ade80', 
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-500 selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-black font-bold text-lg">C</div>
+                        <span class="text-xl font-bold tracking-tight group-hover:text-brand-400 transition-colors">CineLog</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-neutral-400">
+                        <a href="/movies" class="hover:text-white transition-colors">Films</a>
+                        <a href="/lists.html" class="hover:text-white transition-colors">Lists</a>
+                        <a href="#" class="hover:text-white transition-colors">Members</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                     <div class="h-8 w-8 rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://placehold.co/100x100/333/fff?text=ME" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-24 pb-20 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex items-end justify-between mb-8 border-b border-neutral-800 pb-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Recent Reviews</h2>
+                    <p class="text-neutral-400 text-sm mt-1">What the community is watching right now.</p>
+                </div>
+                <button class="lg:hidden text-sm text-brand-400 font-medium">
+                    <i class="fa-solid fa-filter mr-1"></i> Filters
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                
+                <aside class="hidden lg:block space-y-6 sticky top-24 h-fit">
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-lg">
+                        <h3 class="font-bold text-white mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-filter text-brand-500 text-xs"></i> Filters
+                        </h3>
+                        
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-sm text-neutral-300">Hide Spoilers</span>
+                            <button class="w-10 h-5 bg-brand-600 rounded-full relative transition-colors hover:bg-brand-500">
+                                <span class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full shadow-sm"></span>
+                            </button>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-sm text-neutral-300 block">Rating Range</label>
+                            <div class="flex items-center gap-2 text-xs text-neutral-500">
+                                <span>1</span>
+                                <div class="flex-1 h-1 bg-neutral-700 rounded-full relative">
+                                    <div class="absolute left-0 right-0 h-full bg-brand-500 rounded-full opacity-50"></div>
+                                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow cursor-pointer hover:scale-110 transition-transform"></div>
+                                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow cursor-pointer hover:scale-110 transition-transform"></div>
+                                </div>
+                                <span>5</span>
+                            </div>
+                        </div>
+
+                        <hr class="border-neutral-800 my-4">
+                        
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2 text-sm text-neutral-400 hover:text-white cursor-pointer">
+                                <input type="checkbox" class="rounded bg-neutral-800 border-neutral-700 text-brand-500 focus:ring-0">
+                                Friends Only
+                            </label>
+                             <label class="flex items-center gap-2 text-sm text-neutral-400 hover:text-white cursor-pointer">
+                                <input type="checkbox" class="rounded bg-neutral-800 border-neutral-700 text-brand-500 focus:ring-0">
+                                Rewatches Only
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="lg:col-span-3">
+                    <div class="columns-1 md:columns-2 gap-6 space-y-6">
+
+                        <div class="break-inside-avoid bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-md hover:border-neutral-600 transition-colors group">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://placehold.co/50x50/333/fff?text=JD" class="w-8 h-8 rounded-full" alt="User">
+                                    <div>
+                                        <div class="text-xs font-bold text-white">JohnDoe</div>
+                                        <div class="flex text-brand-400 text-[10px] gap-0.5">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-neutral-500">2m ago</span>
+                            </div>
+                            <p class="text-sm text-neutral-300 mb-4 leading-relaxed font-serif">
+                                Simply breathtaking. The visuals alone are worth the ticket price.
+                            </p>
+                            <div class="flex items-center gap-3 pt-3 border-t border-neutral-800">
+                                <img src="https://placehold.co/40x60/222/fff?text=D2" class="w-8 h-10 rounded object-cover border border-neutral-800">
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-xs font-bold text-neutral-200 truncate">Dune: Part Two</h4>
+                                    <span class="text-[10px] text-neutral-500">2024</span>
+                                </div>
+                                <div class="text-xs text-neutral-500 hover:text-brand-400 cursor-pointer transition-colors">
+                                    <i class="fa-regular fa-heart"></i> 24
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="break-inside-avoid bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-md hover:border-neutral-600 transition-colors group">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://placehold.co/50x50/444/fff?text=AL" class="w-8 h-8 rounded-full" alt="User">
+                                    <div>
+                                        <div class="text-xs font-bold text-white">AliceL</div>
+                                        <div class="flex text-brand-400 text-[10px] gap-0.5">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-neutral-500">15m ago</span>
+                            </div>
+                            <p class="text-sm text-neutral-300 mb-4 leading-relaxed font-serif">
+                                I wanted to love this, I really did. The premise is fantastic and the first act sets up a brilliant mystery. But the third act falls apart under its own weight. It tries to explain too much instead of letting the ambiguity sit.
+                            </p>
+                            <div class="flex items-center gap-3 pt-3 border-t border-neutral-800">
+                                <img src="https://placehold.co/40x60/555/fff?text=Arg" class="w-8 h-10 rounded object-cover border border-neutral-800">
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-xs font-bold text-neutral-200 truncate">Argylle</h4>
+                                    <span class="text-[10px] text-neutral-500">2024</span>
+                                </div>
+                                <div class="text-xs text-neutral-500 hover:text-brand-400 cursor-pointer transition-colors">
+                                    <i class="fa-regular fa-heart"></i> 112
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="break-inside-avoid bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-md hover:border-neutral-600 transition-colors group">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://placehold.co/50x50/666/fff?text=MK" class="w-8 h-8 rounded-full" alt="User">
+                                    <div>
+                                        <div class="text-xs font-bold text-white">MovieKing</div>
+                                        <div class="flex text-brand-400 text-[10px] gap-0.5">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-neutral-500">1h ago</span>
+                            </div>
+                            
+                            <div class="bg-neutral-950/50 p-3 rounded mb-2 border border-neutral-800/50 flex items-center gap-2">
+                                <i class="fa-solid fa-eye-slash text-yellow-600 text-xs"></i>
+                                <span class="text-xs text-neutral-500 font-bold uppercase">Contains Spoilers</span>
+                            </div>
+                            
+                            <p class="text-sm text-neutral-500 blur-sm mb-4 leading-relaxed font-serif select-none hover:blur-none transition-all duration-300 cursor-pointer">
+                                The twist where he realizes he was dead the whole time? Classic. But the execution was flawless.
+                            </p>
+
+                            <div class="flex items-center gap-3 pt-3 border-t border-neutral-800">
+                                <img src="https://placehold.co/40x60/777/fff?text=6th" class="w-8 h-10 rounded object-cover border border-neutral-800">
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-xs font-bold text-neutral-200 truncate">The Sixth Sense</h4>
+                                    <span class="text-[10px] text-neutral-500">1999</span>
+                                </div>
+                                <div class="text-xs text-neutral-500 hover:text-brand-400 cursor-pointer transition-colors">
+                                    <i class="fa-regular fa-heart"></i> 856
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="break-inside-avoid bg-neutral-900 border border-neutral-800 rounded-xl p-5 shadow-md hover:border-neutral-600 transition-colors group">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://placehold.co/50x50/888/fff?text=SJ" class="w-8 h-8 rounded-full" alt="User">
+                                    <div>
+                                        <div class="text-xs font-bold text-white">SarahJ</div>
+                                        <div class="flex text-brand-400 text-[10px] gap-0.5">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-neutral-500">3h ago</span>
+                            </div>
+                            <p class="text-sm text-neutral-300 mb-4 leading-relaxed font-serif">
+                                Anxiety inducing in the best way possible.
+                            </p>
+                            <div class="flex items-center gap-3 pt-3 border-t border-neutral-800">
+                                <img src="https://placehold.co/40x60/999/fff?text=Uncut" class="w-8 h-10 rounded object-cover border border-neutral-800">
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-xs font-bold text-neutral-200 truncate">Uncut Gems</h4>
+                                    <span class="text-[10px] text-neutral-500">2019</span>
+                                </div>
+                                <div class="text-xs text-neutral-500 hover:text-brand-400 cursor-pointer transition-colors">
+                                    <i class="fa-regular fa-heart"></i> 42
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button class="bg-neutral-800 hover:bg-neutral-700 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors border border-neutral-700">
+                            Load More Reviews
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-8 text-center">
+        <p class="text-xs text-neutral-600">&copy; 2024 CineLog Inc. Made for movie lovers.</p>
+    </footer>
+
+</body>
+</html>

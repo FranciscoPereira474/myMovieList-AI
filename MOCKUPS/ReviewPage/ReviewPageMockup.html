@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review: Civil War by Alex | CineLog</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        brand: {
+                            400: '#4ade80', 
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                    },
+                    typography: (theme) => ({
+                        DEFAULT: {
+                            css: {
+                                color: theme('colors.neutral.300'),
+                                h1: { color: theme('colors.white') },
+                                h2: { color: theme('colors.white') },
+                                strong: { color: theme('colors.white') },
+                                blockquote: { 
+                                    borderLeftColor: theme('colors.brand.500'),
+                                    color: theme('colors.neutral.400'),
+                                },
+                            },
+                        },
+                    }),
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-500 selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-black font-bold text-lg">C</div>
+                        <span class="text-xl font-bold tracking-tight group-hover:text-brand-400 transition-colors">CineLog</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="h-8 w-8 rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://placehold.co/100x100/333/fff?text=ME" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+
+            <article class="md:col-span-8">
+                
+                <header class="mb-8 border-b border-neutral-800 pb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <a href="#" class="block w-12 h-12 rounded-full overflow-hidden border border-neutral-700 hover:border-white transition-colors">
+                                <img src="https://placehold.co/100x100/444/fff?text=Alex" alt="Alex" class="w-full h-full object-cover">
+                            </a>
+                            <div>
+                                <div class="text-sm text-neutral-400">Review by <a href="#" class="font-bold text-white hover:text-brand-400">AlexG</a></div>
+                                <div class="flex items-center gap-2 text-xs text-neutral-500">
+                                    <span><i class="fa-solid fa-eye mr-1"></i> Watched 12 Apr 2024</span>
+                                    <span class="w-1 h-1 bg-neutral-700 rounded-full"></span>
+                                    <span><i class="fa-solid fa-rotate-right mr-1"></i> Rewatched</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-end gap-4 mb-2">
+                        <div class="flex text-brand-500 text-xl gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-brand-400 font-bold text-lg">4.5</span>
+                    </div>
+
+                    <h1 class="text-2xl md:text-3xl font-black text-white leading-tight">
+                        A Terrifying Look in the Mirror
+                    </h1>
+                </header>
+
+                <div class="bg-neutral-900 border-l-4 border-yellow-500 p-4 mb-8 rounded-r-lg flex items-start gap-3">
+                    <i class="fa-solid fa-triangle-exclamation text-yellow-500 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Contains Spoilers</h4>
+                        <p class="text-xs text-neutral-400">This review discusses the ending. Proceed with caution.</p>
+                    </div>
+                </div>
+
+                <div class="font-serif text-neutral-300 text-lg leading-relaxed space-y-6">
+                    <p>
+                        Alex Garland has never been interested in comforting his audience. From the claustrophobic dread of <em>Ex Machina</em> to the biological mutations of <em>Annihilation</em>, he forces us to look at things we’d rather ignore. With <strong class="text-white">Civil War</strong>, he strips away the sci-fi metaphor and points the camera directly at modern polarization.
+                    </p>
+
+                    <p>
+                        The sound design deserves an Oscar immediately. The gunshots aren't cinematic "pew-pews"; they are deafening, terrifying cracks of thunder that shake the theater seats. It anchors the film in a reality that feels uncomfortably close to home.
+                    </p>
+
+                    <blockquote class="border-l-4 border-brand-500 pl-6 py-2 my-8 italic text-neutral-400 bg-neutral-900/30 rounded-r-lg">
+                        "Every time I survived a war zone, I thought I was sending a warning home: don’t do this. But here we are."
+                    </blockquote>
+
+                    <p>
+                        Kirsten Dunst gives a career-best performance as Lee. Her weariness is palpable. She moves through the chaos not like a hero, but like a ghost haunting her own life. The dynamic between her and the rookie photographer, Jessie (Cailee Spaeny), forms the emotional spine of the movie.
+                    </p>
+
+                    <div class="relative group cursor-pointer my-8">
+                        <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none group-hover:opacity-0 transition-opacity">
+                            <span class="bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-full border border-neutral-700">
+                                <i class="fa-solid fa-eye mr-2"></i> Hover to reveal spoiler
+                            </span>
+                        </div>
+                        <p class="blur-md group-hover:blur-none transition-all duration-300 select-none group-hover:select-text bg-neutral-900/50 p-4 rounded text-neutral-300">
+                            The ending sequence in the White House is pure nightmare fuel. When they finally reach the President, the anti-climax of his capture—dragged out from under a desk like a coward—is brilliant. It refuses to mythologize power. It just shows it ending, brutally and abruptly.
+                        </p>
+                    </div>
+
+                    <p>
+                        Ultimately, this isn't a movie about politics. It's a movie about war journalists, and the cost of being a witness. It asks: does taking the picture change anything? Or are we just documenting our own demise?
+                    </p>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-neutral-800 flex items-center gap-6">
+                    <button class="flex items-center gap-2 text-neutral-400 hover:text-brand-400 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center group-hover:bg-brand-500/10 border border-neutral-800 group-hover:border-brand-500/50 transition-colors">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <span class="font-medium">1,204 Likes</span>
+                    </button>
+
+                    <button class="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center group-hover:bg-neutral-800 border border-neutral-800 transition-colors">
+                            <i class="fa-regular fa-comment"></i>
+                        </div>
+                        <span class="font-medium">42 Comments</span>
+                    </button>
+
+                    <button class="ml-auto text-neutral-500 hover:text-white transition-colors">
+                        <i class="fa-solid fa-share-nodes text-lg"></i>
+                    </button>
+                </div>
+
+            </article>
+
+            <aside class="hidden md:block md:col-span-4 space-y-6">
+                
+                <div class="sticky top-24 bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 shadow-lg backdrop-blur-sm">
+                    <div class="flex gap-4 mb-4">
+                        <div class="w-24 shrink-0 rounded-lg overflow-hidden shadow-lg border border-neutral-700">
+                            <img src="https://placehold.co/200x300/222/fff?text=Civil+War" alt="Poster" class="w-full h-auto object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-lg leading-tight mb-1">Civil War</h3>
+                            <span class="text-neutral-500 text-sm">2024</span>
+                            
+                            <div class="mt-3 flex items-center gap-2 text-xs text-neutral-400">
+                                <span class="bg-neutral-800 px-1.5 py-0.5 rounded text-white border border-neutral-700">3.8</span>
+                                <span>Avg Rating</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <a href="/movie/civil-war" class="block w-full text-center bg-white text-black font-bold py-2 rounded hover:bg-neutral-200 transition-colors text-sm">
+                            View Film Details
+                        </a>
+                        
+                        <button class="block w-full text-center bg-neutral-800 text-white font-medium py-2 rounded hover:bg-neutral-700 transition-colors text-sm border border-neutral-700">
+                            <i class="fa-solid fa-plus mr-1"></i> Add to Watchlist
+                        </button>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-neutral-800">
+                        <h4 class="text-xs font-bold text-neutral-500 uppercase tracking-wide mb-2">More from AlexG</h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" class="flex items-center justify-between text-sm text-neutral-300 hover:text-white group">
+                                    <span>The Substance</span>
+                                    <div class="flex text-brand-400 text-[10px] gap-0.5">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="#" class="flex items-center justify-between text-sm text-neutral-300 hover:text-white group">
+                                    <span>Poor Things</span>
+                                    <div class="flex text-brand-400 text-[10px] gap-0.5">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="#" class="flex items-center justify-between text-sm text-neutral-300 hover:text-white group">
+                                    <span>Argylle</span>
+                                    <div class="flex text-brand-400 text-[10px] gap-0.5">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-8 text-center mt-auto">
+        <p class="text-xs text-neutral-600">&copy; 2024 CineLog Inc.</p>
+    </footer>
+
+</body>
+</html>

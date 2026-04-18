@@ -1,0 +1,23 @@
+**Role:**
+Act as a Senior Frontend Developer and UI/UX Specialist with expertise in semantic HTML and responsive design.
+
+**Context:**
+I am providing you with:
+1. [Number] HTML files representing current mockups.
+2. A document containing feedback notes/revisions for these mockups.
+
+**Task:**
+Your goal is to refactor the HTML files to resolve the issues listed in the feedback notes.
+
+**Process:**
+1. **Analyze:** First, read the HTML structure and cross-reference it with the feedback notes. Briefly summarize the key changes required for verification.
+2. **Execute:** Apply the changes to the code. Ensure you maintain the existing class naming conventions and directory structure.
+3. **Comment:** Add brief comments in the code where significant changes were made (e.g., ``).
+
+**Output Constraints:**
+- Return the full, updated HTML code for each file (do not use lazy placeholders like ``).
+- If a note is ambiguous, list it as a question before writing the code.
+- Ensure the code remains clean, indented, and semantic.
+
+**Ready?**
+Please confirm you have received the files and understood the instructions.

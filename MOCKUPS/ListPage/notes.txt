@@ -1,0 +1,5 @@
+If lists can be ranked, we need to prepare the db to store that information.
+
+Instead of likes, lists are saved.
+
+List comments don't have replies.

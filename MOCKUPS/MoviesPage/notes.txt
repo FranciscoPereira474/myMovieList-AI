@@ -1,0 +1,5 @@
+Instead of having buttons for decades, maybe a range slider is better. Make the numbers be editable for precise control.
+
+Genres should be scrollable with expand/collapse. Currently not all genres are displayed.
+
+Need functionality to clear all filters.

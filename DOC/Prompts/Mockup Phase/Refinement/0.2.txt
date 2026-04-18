@@ -1,0 +1,17 @@
+**Refinement Task: Redo Recommendations Page (`/recommendations`)**
+The previous layout for the Recommendations page implied a complexity (categorized rows) that our backend does not support yet. We need to simplify this to match our single SQL function logic.
+
+**New Layout Requirements:**
+1.  **Simplified Header:**
+    - Title: "Recommended for You".
+    - Subtitle: "Based on your recent ratings and similar profiles."
+    - Action: A "Refresh" button.
+2.  **Single Unified Grid:**
+    - Instead of multiple horizontal rows, display a **single, large responsive grid** of movies.
+    - This should look like an endless feed of suggestions.
+3.  **Visual Distinction (The "Match" Badge):**
+    - To distinguish this from the standard Browse Grid, add a **"Match Score"** overlay on the Movie Cards (e.g., a green badge saying "94% Match" or "High Match") in the top corner of the poster.
+4.  **Fallback State (Keep this):**
+    - Please include a visually distinct "Empty State" section hidden by default (or comment it out in code) showing the "Rate 5 movies to unlock recommendations" message.
+
+**Output:** A single HTML file replacing the previous complex layout with this cleaner, grid-based approach.

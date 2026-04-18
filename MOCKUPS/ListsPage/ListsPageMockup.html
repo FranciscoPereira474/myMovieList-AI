@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Lists | CineLog</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        brand: {
+                            400: '#4ade80', 
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-500 selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-black font-bold text-lg">C</div>
+                        <span class="text-xl font-bold tracking-tight group-hover:text-brand-400 transition-colors">CineLog</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-neutral-400">
+                        <a href="/movies" class="hover:text-white transition-colors">Films</a>
+                        <a href="#" class="text-white font-semibold transition-colors">Lists</a>
+                        <a href="#" class="hover:text-white transition-colors">Members</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                     <div class="h-8 w-8 rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://placehold.co/100x100/333/fff?text=ME" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-24 pb-20 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 border-b border-neutral-800 pb-4 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Discover Lists</h2>
+                    <p class="text-neutral-400 text-sm mt-1">Collections curated by film lovers.</p>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                     <span class="text-xs text-neutral-500 hidden sm:inline">Sort by:</span>
+                     <div class="relative">
+                         <select class="appearance-none bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg pl-3 pr-8 py-2 outline-none focus:ring-1 focus:ring-brand-500 cursor-pointer">
+                             <option>Most Popular (Week)</option>
+                             <option>Newest Created</option>
+                             <option>Most Saved</option>
+                         </select>
+                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-neutral-400">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <article class="group cursor-pointer">
+                    <div class="h-48 w-full flex rounded-xl overflow-hidden border border-neutral-800 group-hover:border-brand-500/50 transition-colors shadow-lg">
+                        <div class="w-2/3 h-full relative">
+                            <img src="https://placehold.co/400x600/111/fff?text=Horror" class="w-full h-full object-cover" alt="Poster 1">
+                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="w-1/3 h-full flex flex-col border-l border-neutral-900">
+                            <img src="https://placehold.co/200x300/222/fff?text=+" class="w-full h-1/2 object-cover border-b border-neutral-900" alt="Poster 2">
+                            <img src="https://placehold.co/200x300/333/fff?text=+" class="w-full h-1/2 object-cover" alt="Poster 3">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3 px-1">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand-400 transition-colors truncate">Neon Nightmares: 80s Horror</h3>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/20x20/444/fff" class="w-5 h-5 rounded-full" alt="User">
+                                <span class="text-xs text-neutral-400">by <span class="text-neutral-300">RetroWave</span></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-neutral-500">
+                                <span title="Items"><i class="fa-solid fa-film mr-1"></i> 24</span>
+                                <span title="Saves"><i class="fa-solid fa-bookmark mr-1"></i> 1.2k</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group cursor-pointer">
+                    <div class="h-48 w-full flex rounded-xl overflow-hidden border border-neutral-800 group-hover:border-brand-500/50 transition-colors shadow-lg">
+                        <div class="w-2/3 h-full relative">
+                            <img src="https://placehold.co/400x600/444/fff?text=A24" class="w-full h-full object-cover" alt="Poster 1">
+                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="w-1/3 h-full flex flex-col border-l border-neutral-900">
+                            <img src="https://placehold.co/200x300/555/fff?text=+" class="w-full h-1/2 object-cover border-b border-neutral-900" alt="Poster 2">
+                            <img src="https://placehold.co/200x300/666/fff?text=+" class="w-full h-1/2 object-cover" alt="Poster 3">
+                        </div>
+                    </div>
+                    <div class="mt-3 px-1">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand-400 transition-colors truncate">A24 Ranked</h3>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/20x20/777/fff" class="w-5 h-5 rounded-full" alt="User">
+                                <span class="text-xs text-neutral-400">by <span class="text-neutral-300">IndieDarling</span></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-neutral-500">
+                                <span><i class="fa-solid fa-film mr-1"></i> 42</span>
+                                <span><i class="fa-solid fa-bookmark mr-1"></i> 890</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="group cursor-pointer">
+                    <div class="h-48 w-full flex rounded-xl overflow-hidden border border-neutral-800 group-hover:border-brand-500/50 transition-colors shadow-lg">
+                        <div class="w-2/3 h-full relative">
+                            <img src="https://placehold.co/400x600/888/fff?text=Noir" class="w-full h-full object-cover" alt="Poster 1">
+                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="w-1/3 h-full flex flex-col border-l border-neutral-900">
+                            <img src="https://placehold.co/200x300/999/fff?text=+" class="w-full h-1/2 object-cover border-b border-neutral-900" alt="Poster 2">
+                            <img src="https://placehold.co/200x300/000/fff?text=+" class="w-full h-1/2 object-cover" alt="Poster 3">
+                        </div>
+                    </div>
+                    <div class="mt-3 px-1">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand-400 transition-colors truncate">Essential Film Noir</h3>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/20x20/111/fff" class="w-5 h-5 rounded-full" alt="User">
+                                <span class="text-xs text-neutral-400">by <span class="text-neutral-300">ClassicsBot</span></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-neutral-500">
+                                <span><i class="fa-solid fa-film mr-1"></i> 100</span>
+                                <span><i class="fa-solid fa-bookmark mr-1"></i> 5.4k</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group cursor-pointer">
+                    <div class="h-48 w-full flex rounded-xl overflow-hidden border border-neutral-800 group-hover:border-brand-500/50 transition-colors shadow-lg">
+                        <div class="w-2/3 h-full relative">
+                            <img src="https://placehold.co/400x600/222/fff?text=Mind" class="w-full h-full object-cover" alt="Poster 1">
+                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="w-1/3 h-full flex flex-col border-l border-neutral-900">
+                            <img src="https://placehold.co/200x300/333/fff?text=+" class="w-full h-1/2 object-cover border-b border-neutral-900" alt="Poster 2">
+                            <img src="https://placehold.co/200x300/444/fff?text=+" class="w-full h-1/2 object-cover" alt="Poster 3">
+                        </div>
+                    </div>
+                    <div class="mt-3 px-1">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand-400 transition-colors truncate">Mind-Bending Sci-Fi</h3>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/20x20/555/fff" class="w-5 h-5 rounded-full" alt="User">
+                                <span class="text-xs text-neutral-400">by <span class="text-neutral-300">NolanFan</span></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-neutral-500">
+                                <span><i class="fa-solid fa-film mr-1"></i> 15</span>
+                                <span><i class="fa-solid fa-bookmark mr-1"></i> 320</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="group cursor-pointer">
+                    <div class="h-48 w-full flex rounded-xl overflow-hidden border border-neutral-800 group-hover:border-brand-500/50 transition-colors shadow-lg">
+                        <div class="w-2/3 h-full relative">
+                            <img src="https://placehold.co/400x600/666/fff?text=Colors" class="w-full h-full object-cover" alt="Poster 1">
+                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="w-1/3 h-full flex flex-col border-l border-neutral-900">
+                            <img src="https://placehold.co/200x300/777/fff?text=+" class="w-full h-1/2 object-cover border-b border-neutral-900" alt="Poster 2">
+                            <img src="https://placehold.co/200x300/888/fff?text=+" class="w-full h-1/2 object-cover" alt="Poster 3">
+                        </div>
+                    </div>
+                    <div class="mt-3 px-1">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand-400 transition-colors truncate">Use of Color: Red</h3>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/20x20/999/fff" class="w-5 h-5 rounded-full" alt="User">
+                                <span class="text-xs text-neutral-400">by <span class="text-neutral-300">Cinematography</span></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-neutral-500">
+                                <span><i class="fa-solid fa-film mr-1"></i> 8</span>
+                                <span><i class="fa-solid fa-bookmark mr-1"></i> 2.1k</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="group cursor-pointer">
+                    <div class="h-48 w-full flex rounded-xl overflow-hidden border border-neutral-800 group-hover:border-brand-500/50 transition-colors shadow-lg">
+                        <div class="w-2/3 h-full relative">
+                            <img src="https://placehold.co/400x600/000/fff?text=Docs" class="w-full h-full object-cover" alt="Poster 1">
+                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="w-1/3 h-full flex flex-col border-l border-neutral-900">
+                            <img src="https://placehold.co/200x300/111/fff?text=+" class="w-full h-1/2 object-cover border-b border-neutral-900" alt="Poster 2">
+                            <img src="https://placehold.co/200x300/222/fff?text=+" class="w-full h-1/2 object-cover" alt="Poster 3">
+                        </div>
+                    </div>
+                    <div class="mt-3 px-1">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand-400 transition-colors truncate">Must Watch Documentaries</h3>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/20x20/333/fff" class="w-5 h-5 rounded-full" alt="User">
+                                <span class="text-xs text-neutral-400">by <span class="text-neutral-300">TruthSeeker</span></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-neutral-500">
+                                <span><i class="fa-solid fa-film mr-1"></i> 50</span>
+                                <span><i class="fa-solid fa-bookmark mr-1"></i> 4.5k</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+             <div class="mt-12 text-center">
+                <button class="bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800 px-8 py-3 rounded-full text-sm font-medium transition-colors">
+                    Load More Lists
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-8 text-center">
+        <p class="text-xs text-neutral-600">&copy; 2024 CineLog Inc. Made for movie lovers.</p>
+    </footer>
+
+</body>
+</html>

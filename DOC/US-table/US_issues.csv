@@ -1,0 +1,189 @@
+ID,IID,Title,Description,Type,URL,State,Confidential,Locked,Milestone,Labels,Author,Author Username,Assignee,Assignee Username,Created At (UTC),Updated At (UTC),Closed At (UTC),Due Date,Start Date,Parent ID,Parent IID,Parent Title,Time Estimate,Time Spent,Weight
+174060568,1,[US1] Main page,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/1,Open,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 14:52:59,2025-10-01 20:40:14,,,,,,,,,
+174060571,2,[US2] Movie page,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/2,Closed,No,No,,US,Gonçalo Borges,goncalonpb,"","",2025-09-28 14:53:32,2025-09-28 18:13:00,2025-09-28 18:13:00,,,,,,,,
+174060578,3,[US3] Movie List Page,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/3,Closed,No,No,,US,Gonçalo Borges,goncalonpb,"","",2025-09-28 14:54:04,2025-09-28 18:12:59,2025-09-28 18:12:59,,,,,,,,
+174060586,4,[US4] Review Page,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/4,Open,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 14:56:00,2025-10-01 18:12:53,,,,,,,,,
+174060595,5,[US5] User Authentication,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/5,Open,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 14:56:51,2025-10-01 20:39:52,,,,,,,,,
+174060596,6,[US6] API Integration,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/6,Closed,No,No,,US,Gonçalo Borges,goncalonpb,"","",2025-09-28 14:57:21,2025-10-01 18:13:17,2025-10-01 18:13:17,,,,,,,,
+174060603,7,[US7] Database,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/7,Closed,No,No,,US,Gonçalo Borges,goncalonpb,"","",2025-09-28 14:57:45,2025-09-28 18:12:53,2025-09-28 18:12:53,,,,,,,,
+174060782,8,"[US1.2] As a user, i want to see a main page with a top bar for navigation.","**Acceptance Criteria:** 
+- Functional Top bar with ""Browse"", ""Watched Movies"", ""Watchlist"", ""User Profile"".
+
+**Motive:**:
+- User should have easy access to different areas of the website.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/8,Closed,No,No,,"US, done",Lucas Ribeiro Caetano,lucas.rib.caetano,"","",2025-09-28 15:12:16,2025-09-28 17:29:58,2025-09-28 17:29:58,,,,,,,,
+174061299,9,"[US1.3] As a user, i want to have personalized recommendations on my main page.","**Acceptance Criteria:** Creation of a algorithm for personalized movie recommendation.
+**Motive:** User should get recommendations based on his personality and likings.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/9,Closed,No,No,,"US, done",Lucas Ribeiro Caetano,lucas.rib.caetano,"","",2025-09-28 15:21:48,2025-09-28 17:29:02,2025-09-28 17:29:02,,,,,,,,
+174061310,10,[US3.1] As a user I want to see a list of movies.,"**Acceptance criteria:** 
+- The list of movies must be displayed.
+- Upon clicking the movie it navigates to its page.
+
+**Motive:** 
+- Users need a landing page to start exploring and searching for moving.
+- Users can click on a movie to navigate to its page.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/10,Closed,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 15:23:03,2025-09-28 18:01:51,2025-09-28 17:28:41,,,,,,,,
+174061378,11,"[US1.4] As a user, i want to see in my main page ""Popular Movies of the Week"".","**Acceptance Criteria:**
+- Show the most watched movies during last week, being able to navigate to each movie page or to see the full list page.
+
+**Motive:** 
+- Popular movies can be attractive to most users.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/11,Closed,No,No,,"US, done",Lucas Ribeiro Caetano,lucas.rib.caetano,"","",2025-09-28 15:27:41,2025-09-28 17:31:41,2025-09-28 17:31:41,,,,,,,,
+174061447,12,"[US1.5] As a user, i want to see the popular reviews of the week in my main page.","**Acceptance Criteria:** 
+- Show the top rated reviews posted during last week for multiple movies, being able to see each review, who wrote it, its rating, post date, related movie and to navigate to that review's page, movie, and user.
+
+**Motive:** 
+- User should be able to access popular reviews for active movie discovery.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/12,Closed,No,No,,"US, done",Lucas Ribeiro Caetano,lucas.rib.caetano,"","",2025-09-28 15:34:50,2025-09-28 17:32:07,2025-09-28 17:32:07,,,,,,,,
+174061449,13,"[US2.1] As a user, I want to see a page for a specific movie.","**Acceptance Criteria:** 
+- Show a page with the title, description, rating, year of release, director, actors, reviews for a specific movie.
+**Motive:** 
+- User wants to get more information for a specific movie.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/13,Closed,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:35:12,2025-09-28 17:32:16,2025-09-28 17:32:16,,,,,,,,
+174061458,14,"[US7.1] As a Developer, i want to store users and movies metadata in data base, so that i can fetch data later.","Acceptance Criteria:
+- Database schema must support storing users, movies, and their relationships
+
+
+Motive: 
+- Ensure that users and movies data are stored in a way that enables recommendations.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/14,Open,No,No,,"US, done",Francisco Pereira,FranciscoPereira04,"","",2025-09-28 15:36:00,2025-10-01 18:08:10,,,,,,,,,
+174061465,15,[US3.2] As a user i want to be able to search for a movie.,"**Acceptance criteria:** 
+ - Search box appears for user to input it's search.
+ - Search must not be case-sensitive.
+ - When nothing is found, there should be a message saying that.
+
+**Motive:** 
+- The user usually comes with a movie already in mind. Searching makes it quick for him to find the movie.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/15,Closed,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 15:36:49,2025-09-28 17:46:49,2025-09-28 17:30:09,,,,,,,,
+174061476,16,"[US1.6] As a user, i want to see the top rated movies of all time.","**Acceptance Criteria:** 
+- Show the top rated movies of all time and their rating.
+- Be able to navigate to each Movie page or to see the full list page.
+
+**Motive:** 
+- User can know what other users of the website think of said movies.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/16,Closed,No,No,,US,Lucas Ribeiro Caetano,lucas.rib.caetano,"","",2025-09-28 15:37:51,2025-09-28 17:58:39,2025-09-28 17:58:38,,,,,,,,
+174061479,17,"[US2.2] As a user, I want to mark a movie as watched, so that it isnt recommended anymore.","**Acceptance Criteria:** 
+- Ability to mark the movie as watched if logged in.
+
+**Motive:** 
+- User wants to add the movie to the watched list.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/17,Open,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:38:22,2025-10-01 18:16:42,,,,,,,,,
+174061488,18,"[US1.7] As a user, i want to access the top rated reviews of all time","**Acceptance Criteria:** 
+- Show the top rated reviews of all time for multiple movies.
+- Be able to see each review, who wrote it, its rating, post date, related movie and to navigate to that review's page.
+**Motive:** User can find valuable reviews and thoughs on particular movies.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/18,Closed,No,No,,"US, done",Lucas Ribeiro Caetano,lucas.rib.caetano,"","",2025-09-28 15:39:14,2025-09-28 17:32:28,2025-09-28 17:32:28,,,,,,,,
+174061538,19,"[US3.3] As a user i want to filter the displayed movies, so that I can easily find movies.","**Acceptance Criteria:** 
+- Multiple categories(gender, actors, director, year, length, rating) can be combined.
+- There is a way to reset the categories being filtered.
+- Year filter should be a range.
+
+**Motive**:
+- If the user wants to look for a certain genre of movies he should be able to do so.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/19,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 15:43:57,2025-10-01 18:06:37,,,,,,,,,
+174061543,20,"[US2.3] As a user, I want to add the movie to the watch list.","**Acceptance Criteria:** 
+- Movie is in the watch list 
+
+**Motive:**
+- User wants to watch the movie later",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/20,Closed,No,No,,US,Gonçalo Borges,goncalonpb,"","",2025-09-28 15:44:06,2025-09-28 17:58:39,2025-09-28 17:58:39,,,,,,,,
+174061549,21,"[US2.4] As a user, I want to rate a specific movie.","**Acceptance Criteria:** Ability to rate a watched movie if logged in.
+
+**Motive:** User wants to rate the movie.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/21,Closed,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:44:49,2025-09-28 17:32:51,2025-09-28 17:32:51,,,,,,,,
+174061567,22,"[US7.2] As a developer, i want to store sensitive information with encryption.","**Acceptance Criteria:**
+- Passwords and other sensitive information must be stored using hash algorithm.
+
+**Motive:**
+- Prevent exposure of private information.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/22,Closed,No,No,,"US, done",Francisco Pereira,FranciscoPereira04,"","",2025-09-28 15:46:24,2025-09-28 17:32:37,2025-09-28 17:32:37,,,,,,,,
+174061610,23,"[US2.5] As a user, I want to see the popular reviews for a specific movie.","**Acceptance Criteria:** 
+- Display reviews with the most likes, dislikes and comments.
+- Clicking on a user or review should navigate to the corresponding page.
+- Ability to like or dislike the review.
+- Clicking on comments navigates to the review's page.
+
+**Motive:** User wants to see some popular reviews.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/23,Closed,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:49:39,2025-09-28 17:32:58,2025-09-28 17:32:58,,,,,,,,
+174061611,24,[US3.4] As a user i want to be able to sort movies.,"**Acceptance criteria:**
+- Sort by: ascending/descending, year, rating or lenght.
+- Upon sorting, list of movies is updated accordingly.
+
+**Motive:**
+- If the user want to search for a certain series of movies in chronological order, he must be able to.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/24,Closed,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 15:49:41,2025-09-28 17:46:52,2025-09-28 17:41:15,,,,,,,,
+174061687,25,"[US2.6] As a user, I want to see the recent reviews for a specific movie.","**Acceptance Criteria:** Display recent reviews. Clicking on a user or review should navigate to the corresponding page. Ability to like or dislike the review. Clicking on comments navigates to the review's page.
+
+**Motive:** User wants to see the most recent reviews for a movie.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/25,Closed,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:53:55,2025-09-28 17:33:05,2025-09-28 17:33:05,,,,,,,,
+174061757,27,"[US2.7] As a user, I want to write a review for a specific movie.","**Acceptance Criteria:** Ability to make a review of the movie if user is logged in and has watched the movie.
+**Motive:** User wants to write his opinion for a movie.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/27,Closed,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:56:36,2025-09-28 18:10:37,2025-09-28 17:33:19,,,,,,,,
+174061780,28,"[US5.1] As a user, I want to sign up","**Acceptance Criteria:** 
+- Be able to sign up a new user with a non existing email/username and password.
+- User should choose his preferred genres upon account creation.
+
+**Motive:** 
+- User wants to create a new account.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/28,Closed,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:57:37,2025-09-28 18:04:55,2025-09-28 17:33:25,,,,,,,,
+174061796,29,"[US5.2] As a user, I want to log in.","**Acceptance Criteria:** Be able to log in as a user with an email/username and password.
+**Motive:** User wants to access his account.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/29,Closed,No,No,,"US, done",Gonçalo Borges,goncalonpb,"","",2025-09-28 15:58:02,2025-09-28 17:33:58,2025-09-28 17:33:58,,,,,,,,
+174062005,30,"[US4.1] As a user I want to have a page for reviews, so that I can feel the sense of community.","**Acceptance criteria:**
+- Creation of a page for reviews.
+- Each review should have text, the author of the review, post date, related movie, rating, replies, likes.
+
+**Motive:** 
+- Improve overall community.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/30,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 16:04:47,2025-10-01 18:07:00,,,,,,,,,
+174062092,31,"[US7.4] As a developer, i want the database almost always available, so that i can access the data.","**Acceptance Criteria:**
+- Data availability is assured by the chosen cloud provider.
+
+**Motive:**
+- Developers must have data accessible.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/31,Open,No,No,,"US, done",Francisco Pereira,FranciscoPereira04,"","",2025-09-28 16:07:53,2025-10-01 18:15:54,,,,,,,,,
+174062130,32,[US9] User Page,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/32,Open,No,No,,"US, done",Francisco Pereira,FranciscoPereira04,"","",2025-09-28 16:10:25,2025-10-01 20:40:01,,,,,,,,,
+174062131,33,"[US4.2] As a  user, I want to rate other people's reviews.","**Acceptance Criteria:**
+- Rating is only available to logged-in users.
+- Logged-out users see a prompt to log if they try to rate.
+
+**Motive:**
+- Rating each other's reviews helps create a sense of participation and community among users.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/33,Closed,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 16:10:30,2025-09-28 18:03:10,2025-09-28 17:29:22,,,,,,,,
+174062189,34,"[US4.3] As a user, I want to reply to a review, so that i can express my opinion.","**Acceptance criteria:**
+- Reply is only available to logged-in user.
+- Logged-out users must be asked to log-in if they try to reply to a review.
+
+**Motive:** 
+- Replying to each other's reviews helps create a sense of participation and community among users.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/34,Closed,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 16:15:03,2025-10-01 18:23:35,2025-09-28 17:28:55,,,,,,,,
+174062733,36,"[US8.1] As an administrator, I want the full software to be deployed to a cloud environment, so that it is scalable and resilient.","**Acceptance Criteria:**
+- Application is deployed to a cloud provider.
+- Users can access the site developed.
+
+**Motive:** 
+- Users can access the service reliably.
+- Infrastructure must be scalable.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/36,Closed,No,No,,"US, done",Francisco Loureiro,floureiro4,"","",2025-09-28 16:28:45,2025-10-01 18:22:59,2025-09-28 17:29:46,,,,,,,,
+174062738,37,"[US9.1] As a user, i want to see my profile page, so that i can manage my movie library.","**Acceptance Criteria:**
+- The user page must display three sections: Recently Watched, Watched, and Plan-to-Watch.
+- Each movie must show its title, poster, and basic metadata.
+
+**Motive:**
+- Provide users a space to manage and review their movie preferences and history.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/37,Closed,No,No,,"US, done",Francisco Pereira,FranciscoPereira04,"","",2025-09-28 16:28:58,2025-10-01 18:22:37,2025-09-28 17:33:50,,,,,,,,
+174062887,38,[US8] Cloud integration,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/38,Closed,No,No,,US,Francisco Loureiro,floureiro4,"","",2025-09-28 16:33:50,2025-10-01 16:41:01,2025-10-01 16:41:01,,,,,,,,
+174217978,42,[US6.1] As a system owner I need all the path and query parameter to resolve successfully so that my website works correctly,"**Acceptance criteria:** 
+1. All the tested uses of the API within the code work accordingly to what's expected
+
+**Motive:**
+If the API requests are not working correctly the website won't work.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/42,Closed,No,No,,US,Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 16:34:08,2025-10-01 18:13:15,2025-10-01 18:13:15,,,,,,,,
+174218392,43,"[US4.4] As a system administrator I don't want the replies to have obscene wording, so that the users don't feels discomfort using the website.","**Acceptance criteria:** The filter system must be implemented and working, filtering or disallowing the review to be posted.
+**Motive:** So that manual moderation isn't needed to filter obscene messages.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/43,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 16:49:23,2025-10-01 18:12:51,,,,,,,,,
+174218790,44,[US10] Navigation Bar,"",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/44,Closed,No,No,,US,Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 17:02:01,2025-10-01 18:13:19,2025-10-01 18:13:19,,,,,,,,
+174218934,45,"[US10.1] As a user i want to have a navigation bar, so that i can navigate across the website.","**Acceptance criteria:** A navigation bar is displayed at the top of the screen. All of it's functionalities work as intended.
+
+**Motive:** A navigation bar facilitates the use of the website to the user.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/45,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 17:06:34,2025-10-01 17:36:50,,,,,,,,,
+174219040,46,[US10.4] As an authenticated user I want to click on watched movies link so that I can navigate to a page containing the list of movies I rated.,"**Acceptance Criteria:** Clicking on the link takes the user to the correct page showing the correct information (list of movies the user has rated). This link should only be visible to authenticated users.
+
+**Motive:** Users want to keep track of movies they have rated in the past.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/46,Open,No,No,,"US, done",Tiago Mendes,tiagomendes1992,"","",2025-10-01 17:10:00,2025-10-01 17:36:01,,,,,,,,,
+174219158,47,"[US10.2] As a user I want to click the website logo and be redirected to the main page, so that I can have a easy access to the main page.","**Acceptance criteria:** The website logo redirects to the main page when clicked.
+
+**Motive:** Easier access to the main page for the user.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/47,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 17:14:51,2025-10-01 17:37:01,,,,,,,,,
+174219380,48,[US10.6] I as a user want to submit a search query to get related information so that I can easily find a specific content.,"**Acceptance Criteria:** If there is a content related to a search query it should be one of the results.
+
+**Motive:** So that users can find a specific content faster than if they were to use filters/sorting.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/48,Open,No,No,,"US, done",Tiago Mendes,tiagomendes1992,"","",2025-10-01 17:16:25,2025-10-01 17:36:39,,,,,,,,,
+174219836,49,[US10.5] As an authenticated user I want to click on watchlisted movies link so that I can navigate to a page containing the list of movies I added to my watchlist.,"**Acceptance Criteria:** Clicking on the link takes the user to the correct page showing the correct information (list of movies the user has added to their watchlist). This link should only be visible to authenticated users.
+
+**Motive:** Users want to keep track of movies they want to watch in the future.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/49,Open,No,No,,"US, done",Tiago Mendes,tiagomendes1992,"","",2025-10-01 17:23:56,2025-10-01 17:36:00,,,,,,,,,
+174219844,50,[US10.3] As a user a I want to be able to hover the navigation bar and the various predefined movie pages so that i can have a easy access to the movie pages.,"**Acceptance criteria:** Overing the navigation bar shows the predefined movie pages. If clicked it must take users to the complete movie list page.
+
+**Motive:** Helps the user navigate around the website in a intuitive way.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/50,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 17:24:06,2025-10-01 17:37:24,,,,,,,,,
+174220069,51,[US10.7] As an authenticated user I want to be able to go to my profile and settings page so that I can see information related to my account and settings.,"**Acceptance Criteria:** Clicking on user's corner takes user to their profile page. Hovering it can display a dropdown menu with settings' page link.
+
+**Motive:** Users want to access their profile and manage settings.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/51,Open,No,No,,"US, done",Tiago Mendes,tiagomendes1992,"","",2025-10-01 17:27:49,2025-10-01 17:36:42,,,,,,,,,
+174220324,52,"[US10.8] As an unauthenticated user I want to click a sign up/login button, so that I can log in or create an account in the website.","**Acceptance criteria:** There's a button on the navigation bar that appears only to unauthenticated user that lets them authenticate.
+
+**Motive:** There needs to be a way for users to authenticate in the website.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/52,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 17:33:02,2025-10-01 17:38:38,,,,,,,,,
+174221541,53,[US5.4] As an authenticated user I want to be able to log out so that I can end my session or change accounts.,"**Acceptance Criteria:** Authenticated users can successfully log out. Website reflects this change.
+
+**Motives:** Users should be able to end their session for security reasons. They could also want to log into another account.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/53,Open,No,No,,"US, done",Tiago Mendes,tiagomendes1992,"","",2025-10-01 18:14:08,2025-10-01 18:30:40,,,,,,,,,
+174222027,54,"[US1.1] As a user I want to be able to access a main page, so that I can have a intuitive navigation experience.","**Acceptance criteria:** The website has a main page that has a top bar for navigation and other contents.
+
+**Motive:** A main page contributes to a intuitive website.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/54,Open,No,No,,"US, done",Francisco Loureiro,floureiro4,Francisco Loureiro,floureiro4,2025-10-01 18:18:59,2025-10-01 18:31:36,,,,,,,,,
+174222150,55,[US9.2] I as a user want to be able to have and change a profile picture so that I can add personality to my profile.,"**Acceptance Criteria:** User's selected picture appears across the website (on user corner, on reviews, on replies, etc.).
+
+**Motive:** Users can express themselves through their profile image.",Issue,https://gitlab.com/ads-mei/project-ads-mei/-/issues/55,Open,No,No,,"US, done",Tiago Mendes,tiagomendes1992,"","",2025-10-01 18:23:54,2025-10-01 18:29:49,,,,,,,,,
